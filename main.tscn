@@ -53,6 +53,7 @@ metadata/_custom_type_script = "uid://bp5ix0qc0l30h"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.502149, -0.587744)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BallStand"]
+layers = 3
 mesh = SubResource("BoxMesh_0xm2m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BallStand"]
@@ -62,6 +63,7 @@ shape = SubResource("ConvexPolygonShape3D_0xm2m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.502149, -2.88057)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="BottleStand"]
+layers = 3
 mesh = SubResource("BoxMesh_0xm2m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BottleStand"]
@@ -92,10 +94,10 @@ skeleton = NodePath("../..")
 shape = SubResource("ConvexPolygonShape3D_h2yge")
 
 [node name="milk-bottle" parent="." instance=ExtResource("4_1bvp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.244398, 1.01131, -2.87899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.208576, 1.01131, -2.87899)
 
 [node name="milk-bottle2" parent="." instance=ExtResource("4_1bvp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.201696, 1.01131, -2.85157)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172288, 1.01131, -2.85157)
 
 [node name="milk-bottle3" parent="." instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0256032, 1.48098, -2.85157)

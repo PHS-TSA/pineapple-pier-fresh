@@ -25,12 +25,12 @@ closed_pose = ExtResource("6_01kih")
 metadata/_custom_type_script = "uid://bb1ffwn8niagg"
 
 [node name="Ball" type="RigidBody3D"]
-collision_layer = 5
+collision_layer = 6
 collision_mask = 196615
 mass = 5.0
 freeze_mode = 1
 script = ExtResource("1_1ipm8")
-picked_up_layer = 65537
+picked_up_layer = 65538
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_cq731")

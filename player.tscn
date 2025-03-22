@@ -21,6 +21,7 @@ strafe = true
 
 [node name="XRToolsFunctionPickup" type="Node3D" parent="LeftHandController"]
 script = ExtResource("2_hqtel")
+ranged_distance = 10.0
 metadata/_custom_type_script = "uid://b8p6yt7yj0cro"
 
 [node name="RightHandController" type="XRController3D" parent="."]
@@ -33,6 +34,8 @@ turn_mode = 2
 
 [node name="XRToolsFunctionPickup" type="Node3D" parent="RightHandController"]
 script = ExtResource("2_hqtel")
+ranged_distance = 10.0
 metadata/_custom_type_script = "uid://b8p6yt7yj0cro"
 
 [node name="PlayerBody" parent="." instance=ExtResource("5_1jxqw")]
+collision_mask = 1021
