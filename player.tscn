@@ -16,23 +16,23 @@ tracker = &"left_hand"
 
 [node name="LeftHand" parent="LeftHandController" instance=ExtResource("1_onrkg")]
 
-[node name="XRToolsFunctionPickup" type="Node3D" parent="LeftHandController/LeftHand"]
-script = ExtResource("2_hqtel")
-metadata/_custom_type_script = "uid://b8p6yt7yj0cro"
-
 [node name="MovementDirect" parent="LeftHandController" instance=ExtResource("3_2hs0m")]
 strafe = true
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="LeftHandController"]
+script = ExtResource("2_hqtel")
+metadata/_custom_type_script = "uid://b8p6yt7yj0cro"
 
 [node name="RightHandController" type="XRController3D" parent="."]
 tracker = &"right_hand"
 
 [node name="RightHand" parent="RightHandController" instance=ExtResource("2_i3pqv")]
 
-[node name="XRToolsFunctionPickup" type="Node3D" parent="RightHandController/RightHand"]
-script = ExtResource("2_hqtel")
-metadata/_custom_type_script = "uid://b8p6yt7yj0cro"
-
 [node name="MovementTurn" parent="RightHandController" instance=ExtResource("5_dw050")]
 turn_mode = 2
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="RightHandController"]
+script = ExtResource("2_hqtel")
+metadata/_custom_type_script = "uid://b8p6yt7yj0cro"
 
 [node name="PlayerBody" parent="." instance=ExtResource("5_1jxqw")]
