@@ -1,12 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://dkqfmagjsdm07"]
+[gd_scene load_steps=24 format=3 uid="uid://dkqfmagjsdm07"]
 
+[ext_resource type="Script" uid="uid://cohbke6ncegqs" path="res://Game_Logic.gd" id="1_5vw27"]
 [ext_resource type="Script" uid="uid://bp5ix0qc0l30h" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://de2fykkg6ttnv" path="res://player.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cd65vnfm84udm" path="res://milk_bottle.tscn" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://622k3d44ebei" path="res://milk_bottle_game_logic.gd" id="5_kek77"]
 [ext_resource type="PackedScene" uid="uid://d348tu74h3moo" path="res://ball.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://n2jo6br62m48" path="res://boring_sky_shader.tscn" id="6_272bh"]
-[ext_resource type="PackedScene" uid="uid://dm2e4qfiy0v0a" path="res://Components/zone_save_point.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://cme66uldrjl2i" path="res://addons/godot-xr-tools/interactables/interactable_area_button.tscn" id="8_kek77"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
 size = Vector3(1, 1, 0.5)
@@ -30,7 +32,39 @@ size = Vector2(10, 10)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_h2yge"]
 points = PackedVector3Array(-5, 0, -5, -5, 0, 5, 5, 0, -5, 5, 0, 5)
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_7f0ok"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 1.4
+radial_segments = 8
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cxops"]
+metallic = 0.59
+roughness = 0.41
+uv1_scale = Vector3(1, 4, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0273w"]
+size = Vector3(0.4, 0.04, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0tokh"]
+size = Vector3(0.4, 0.04, 0.3)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_62pep"]
+radius = 0.15
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wjqor"]
+top_radius = 0.075
+bottom_radius = 0.1
+height = 0.05
+radial_segments = 16
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lql4b"]
+albedo_color = Color(0.760784, 0.164706, 0.0823529, 1)
+
 [node name="Main" type="Node3D"]
+script = ExtResource("1_5vw27")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -83,34 +117,92 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane"]
 shape = SubResource("ConvexPolygonShape3D_h2yge")
 
-[node name="milk-bottle" parent="." instance=ExtResource("4_1bvp3")]
+[node name="MilkBottleObjectContainer" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_kek77")
+
+[node name="milk-bottle" parent="MilkBottleObjectContainer" instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.208576, 1.01131, -2.87899)
 
-[node name="milk-bottle2" parent="." instance=ExtResource("4_1bvp3")]
+[node name="milk-bottle2" parent="MilkBottleObjectContainer" instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172288, 1.01131, -2.85157)
 
-[node name="milk-bottle3" parent="." instance=ExtResource("4_1bvp3")]
+[node name="milk-bottle3" parent="MilkBottleObjectContainer" instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0256032, 1.48098, -2.85157)
 
-[node name="Ball" parent="." instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.342111, 1.08215, -0.492723)
+[node name="Ball" parent="MilkBottleObjectContainer" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.383362, 1.08215, -0.492723)
 
-[node name="Ball2" parent="." instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.191853, 1.08215, -0.492723)
+[node name="Ball2" parent="MilkBottleObjectContainer" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233104, 1.08215, -0.492723)
 
-[node name="Ball3" parent="." instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0358286, 1.08215, -0.492723)
+[node name="Ball3" parent="MilkBottleObjectContainer" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0770801, 1.08215, -0.492723)
 
-[node name="Ball4" parent="." instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115033, 1.08215, -0.492723)
+[node name="Ball4" parent="MilkBottleObjectContainer" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0737815, 1.08215, -0.492723)
 
-[node name="Ball5" parent="." instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.265458, 1.08215, -0.492723)
+[node name="Ball5" parent="MilkBottleObjectContainer" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.224207, 1.08215, -0.492723)
 
-[node name="Ball6" parent="." instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.413546, 1.08215, -0.492723)
+[node name="Ball6" parent="MilkBottleObjectContainer" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.372295, 1.08215, -0.492723)
 
 [node name="BoringSkyShader" parent="." instance=ExtResource("6_272bh")]
 
-[node name="ZoneSavePoint" parent="." instance=ExtResource("7_272bh")]
+[node name="MilkGameButton" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14185, -0.349359, -0.11235)
+
+[node name="Pole" type="MeshInstance3D" parent="MilkGameButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, -0.75)
+mesh = SubResource("CylinderMesh_7f0ok")
+surface_material_override/0 = SubResource("StandardMaterial3D_cxops")
+
+[node name="Table" type="StaticBody3D" parent="MilkGameButton/Pole"]
+transform = Transform3D(1, 0, 0, 0, 0.929358, -0.369179, 0, 0.369179, 0.929358, 0, 0.702817, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="MilkGameButton/Pole/Table"]
+mesh = SubResource("BoxMesh_0273w")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MilkGameButton/Pole/Table"]
+shape = SubResource("BoxShape3D_0tokh")
+
+[node name="MilkButton" parent="MilkGameButton/Pole" instance=ExtResource("8_kek77")]
+transform = Transform3D(1, 0, 0, 0, 0.929358, -0.369179, 0, 0.369179, 0.929358, 0, 0.702817, 0)
+button = NodePath("Button")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MilkGameButton/Pole/MilkButton"]
+shape = SubResource("SphereShape3D_62pep")
+
+[node name="Button" type="MeshInstance3D" parent="MilkGameButton/Pole/MilkButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0436053, -1.19209e-07)
+mesh = SubResource("CylinderMesh_wjqor")
+skeleton = NodePath("../../Table/Mesh")
+surface_material_override/0 = SubResource("StandardMaterial3D_lql4b")
+
+[node name="Ball1Marker" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.224207, 1.08215, -0.492723)
+
+[node name="Ball2Marker" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000435546, 1.08215, -0.492723)
+
+[node name="Ball3Marker" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233104, 1.08215, -0.492723)
+
+[node name="Milk1Marker" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.208576, 1.01131, -2.87899)
+
+[node name="Milk2Marker" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172288, 1.01131, -2.85157)
+
+[node name="Milk3Marker" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0256032, 1.48098, -2.85157)
+
+[connection signal="button_pressed" from="MilkGameButton/Pole/MilkButton" to="MilkBottleObjectContainer" method="_on_milk_button_button_pressed"]
