@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dkqfmagjsdm07"]
+[gd_scene load_steps=15 format=3 uid="uid://dkqfmagjsdm07"]
 
 [ext_resource type="Script" uid="uid://bp5ix0qc0l30h" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://de2fykkg6ttnv" path="res://player.tscn" id="2_0xm2m"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cd65vnfm84udm" path="res://milk_bottle.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://d348tu74h3moo" path="res://ball.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://n2jo6br62m48" path="res://boring_sky_shader.tscn" id="6_272bh"]
+[ext_resource type="PackedScene" uid="uid://dm2e4qfiy0v0a" path="res://Components/zone_save_point.tscn" id="7_272bh"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
 size = Vector3(1, 1, 0.5)
@@ -110,3 +111,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.265458, 1.08215, -0.492723
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.413546, 1.08215, -0.492723)
 
 [node name="BoringSkyShader" parent="." instance=ExtResource("6_272bh")]
+
+[node name="ZoneSavePoint" parent="." instance=ExtResource("7_272bh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14185, -0.349359, -0.11235)
