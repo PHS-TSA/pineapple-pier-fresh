@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cd65vnfm84udm"]
+
+[ext_resource type="PackedScene" uid="uid://cvpubxpuatn1s" path="res://Assets/milk-bottle.dae" id="1_5lole"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5lole"]
+size = Vector3(0.297363, 0.42942, 0.266846)
+
+[node name="milk-bottle" instance=ExtResource("1_5lole")]
+
+[node name="CollisionShape3D" parent="Milk Jug" index="1"]
+transform = Transform3D(1.00001, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, 1.00001, 0.00122074, 0.210949, -0.000610392)
+shape = SubResource("BoxShape3D_5lole")
