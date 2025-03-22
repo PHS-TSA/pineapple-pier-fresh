@@ -3,7 +3,17 @@ extends Node3D
 const MILKBALL = preload("res://ball.tscn")
 const MILKBOTTLE = preload("res://milk_bottle.tscn")
 
+var bottles = []
+#TODO
+#Implement ready function to get all starting bottles 
+
+func _ready():
+	for i in range(len(self.get_children())):
+		if(self.get_child(i).scene_file_path == "res://milk_bottle.tscn"):
+				bottles.append(self.get_child(i))
+
 func _on_milk_button_button_pressed(button):
+	print(bottles)
 	print("started running")
 	for i in range(len(self.get_children())):
 		self.get_child(i).queue_free()
@@ -31,6 +41,16 @@ func _on_milk_button_button_pressed(button):
 	bottle3.global_position = %Milk3Marker.global_position
 	add_child(bottle3)
 	print("stuff should be spawned")
-
+	
+	await get_tree().create_timer(0.5).timeout
+	
+	bottles.clear()
 	for i in range(len(self.get_children())):
-		print(self.get_child(i))
+		print(self.get_child(i).scene_file_path)
+		if(self.get_child(i).scene_file_path == "res://milk_bottle.tscn"):
+			bottles.append(self.get_child(i))
+	print(bottles)
+
+#func _physics_process(delta):
+	
+	
