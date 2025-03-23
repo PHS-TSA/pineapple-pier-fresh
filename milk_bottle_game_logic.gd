@@ -3,14 +3,14 @@ extends Node3D
 const MILKBALL = preload("res://ball.tscn")
 const MILKBOTTLE = preload("res://milk_bottle.tscn")
 
-var bottles = []
+var bottles: Array[RigidBody3D]
 #TODO
 #Implement ready function to get all starting bottles 
 
 func _ready():
 	for i in range(len(self.get_children())):
 		if(self.get_child(i).scene_file_path == "res://milk_bottle.tscn"):
-				bottles.append(self.get_child(i))
+				bottles.append(self.get_child(i).get_child(0))
 
 func _on_milk_button_button_pressed(button):
 	print(bottles)
@@ -42,15 +42,37 @@ func _on_milk_button_button_pressed(button):
 	add_child(bottle3)
 	print("stuff should be spawned")
 	
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.1).timeout
 	
 	bottles.clear()
 	for i in range(len(self.get_children())):
 		print(self.get_child(i).scene_file_path)
 		if(self.get_child(i).scene_file_path == "res://milk_bottle.tscn"):
-			bottles.append(self.get_child(i))
+			bottles.append(self.get_child(i).get_child(0))
 	print(bottles)
 
 #func _physics_process(delta):
 	
 	
+
+
+
+func _on_milk_area_body_entered(body):
+	if(%MilkTimer.time_left == 0 && body.scene_file_path == "res://ball.tscn"):
+		print("timer starting")
+		print(bottles)
+		%MilkTimer.start(2)
+
+	while(%MilkTimer.time_left > 0):
+		var knockedOver = true
+		# I was going to write this better but I thought it'd be funnier to have eli review this. Introducing the if statement from hell
+		for bottle in bottles:
+			if(abs(bottle.rotation_degrees.x) < 40 && abs(bottle.rotation_degrees.z) < 40):
+				knockedOver = false
+		if(knockedOver):
+			print("WINNER WINNER CHICKEN DINNER")
+			%MilkTimer.stop()
+			break
+		await get_tree().create_timer(0.1).timeout
+
+	pass # Replace with function body.
