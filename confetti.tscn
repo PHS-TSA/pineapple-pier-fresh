@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvlvbcd6vfrit"]
+
+[sub_resource type="Gradient" id="Gradient_sudau"]
+offsets = PackedFloat32Array(0, 0.472313, 0.775244, 0.996743, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.460848, 0.460848, 0.460848, 1, 0.756427, 0.756427, 0.756427, 1, 0.972549, 0.972549, 0.972549, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0lbn0"]
+gradient = SubResource("Gradient_sudau")
+
+[sub_resource type="Curve" id="Curve_xnakt"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0.003003, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ilyld"]
+curve = SubResource("Curve_xnakt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_smimb"]
+direction = Vector3(0, 1, 0)
+initial_velocity_max = 5.0
+gravity = Vector3(0, 5, 0)
+radial_accel_min = -2.23517e-06
+radial_accel_max = 5.0
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 5.0
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("GradientTexture1D_0lbn0")
+hue_variation_min = -2.23517e-08
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("CurveTexture_ilyld")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ovyj8"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_sf15k"]
+material = SubResource("StandardMaterial3D_ovyj8")
+shape = 0
+size = 0.3
+sections = 4
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+amount = 64
+lifetime = 3.0
+explosiveness = 1.0
+trail_enabled = true
+trail_lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_smimb")
+draw_pass_1 = SubResource("RibbonTrailMesh_sf15k")

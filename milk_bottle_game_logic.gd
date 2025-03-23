@@ -13,6 +13,7 @@ func _ready():
 				bottles.append(self.get_child(i).get_child(0))
 
 func _on_milk_button_button_pressed(button):
+	%MilkTimer.stop()
 	print(bottles)
 	print("started running")
 	for i in range(len(self.get_children())):
@@ -66,12 +67,19 @@ func _on_milk_area_body_entered(body):
 	while(%MilkTimer.time_left > 0):
 		var knockedOver = true
 		# I was going to write this better but I thought it'd be funnier to have eli review this. Introducing the if statement from hell
+		print("are we working?")
+		print(body)
+		print(bottles)
 		for bottle in bottles:
 			if(abs(bottle.rotation_degrees.x) < 40 && abs(bottle.rotation_degrees.z) < 40):
 				knockedOver = false
 		if(knockedOver):
-			print("WINNER WINNER CHICKEN DINNER")
 			%MilkTimer.stop()
+			%MilkConfetti.emitting = true
+			%MilkYay.play()
+			await get_tree().create_timer(0.5).timeout
+			%MilkConfetti.emitting = false
+
 			break
 		await get_tree().create_timer(0.1).timeout
 

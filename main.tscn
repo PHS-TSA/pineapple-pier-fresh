@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dkqfmagjsdm07"]
+[gd_scene load_steps=33 format=3 uid="uid://dkqfmagjsdm07"]
 
 [ext_resource type="Script" uid="uid://cohbke6ncegqs" path="res://Game_Logic.gd" id="1_5vw27"]
 [ext_resource type="Script" uid="uid://bp5ix0qc0l30h" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="1_ig7tw"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://622k3d44ebei" path="res://milk_bottle_game_logic.gd" id="5_kek77"]
 [ext_resource type="PackedScene" uid="uid://d348tu74h3moo" path="res://ball.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://n2jo6br62m48" path="res://boring_sky_shader.tscn" id="6_272bh"]
+[ext_resource type="AudioStream" uid="uid://cutypwo7e5q8h" path="res://Assets/Audio/YAY - Sound Effect.mp3" id="8_4c57u"]
 [ext_resource type="PackedScene" uid="uid://cme66uldrjl2i" path="res://addons/godot-xr-tools/interactables/interactable_area_button.tscn" id="8_kek77"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
@@ -31,6 +32,48 @@ size = Vector2(10, 10)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_h2yge"]
 points = PackedVector3Array(-5, 0, -5, -5, 0, 5, 5, 0, -5, 5, 0, 5)
+
+[sub_resource type="Gradient" id="Gradient_sudau"]
+offsets = PackedFloat32Array(0, 0.472313, 0.775244, 0.996743, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.460848, 0.460848, 0.460848, 1, 0.756427, 0.756427, 0.756427, 1, 0.972549, 0.972549, 0.972549, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0lbn0"]
+gradient = SubResource("Gradient_sudau")
+
+[sub_resource type="Curve" id="Curve_xnakt"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0.003003, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ilyld"]
+curve = SubResource("Curve_xnakt")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_smimb"]
+direction = Vector3(0, 1, 0)
+initial_velocity_max = 5.0
+gravity = Vector3(0, 5, 0)
+radial_accel_min = -2.23517e-06
+radial_accel_max = 5.0
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 5.0
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("GradientTexture1D_0lbn0")
+hue_variation_min = -2.23517e-08
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("CurveTexture_ilyld")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ovyj8"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_sf15k"]
+material = SubResource("StandardMaterial3D_ovyj8")
+shape = 0
+size = 0.3
+sections = 4
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_7f0ok"]
 top_radius = 0.05
@@ -134,22 +177,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172288, 1.01131, -2.85157)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0256032, 1.48098, -2.85157)
 
 [node name="Ball" parent="MilkBottleObjectContainer" instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.383362, 1.08215, -0.492723)
-
-[node name="Ball2" parent="MilkBottleObjectContainer" instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233104, 1.08215, -0.492723)
-
-[node name="Ball3" parent="MilkBottleObjectContainer" instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0770801, 1.08215, -0.492723)
-
-[node name="Ball4" parent="MilkBottleObjectContainer" instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0737815, 1.08215, -0.492723)
-
-[node name="Ball5" parent="MilkBottleObjectContainer" instance=ExtResource("6_7mycd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.224207, 1.08215, -0.492723)
 
-[node name="Ball6" parent="MilkBottleObjectContainer" instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.372295, 1.08215, -0.492723)
+[node name="Ball2" parent="MilkBottleObjectContainer" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000435546, 1.08215, -0.492723)
+
+[node name="Ball3" parent="MilkBottleObjectContainer" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233104, 1.08215, -0.492723)
+
+[node name="Confetti" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0402215, 0.203292, -1.82595)
+
+[node name="MilkConfetti" type="GPUParticles3D" parent="Confetti"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.705352, 0)
+emitting = false
+amount = 64
+lifetime = 3.0
+explosiveness = 1.0
+trail_enabled = true
+trail_lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_smimb")
+draw_pass_1 = SubResource("RibbonTrailMesh_sf15k")
+
+[node name="MilkYay" type="AudioStreamPlayer3D" parent="Confetti"]
+unique_name_in_owner = true
+stream = ExtResource("8_4c57u")
+volume_db = 14.187
 
 [node name="BoringSkyShader" parent="." instance=ExtResource("6_272bh")]
 
