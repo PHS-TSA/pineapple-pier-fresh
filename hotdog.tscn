@@ -136,13 +136,11 @@ script = ExtResource("1_y2bva")
 picked_up_layer = 65538
 
 [node name="GrabPointHandLeft" parent="." instance=ExtResource("2_or0r8")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0846747, 0.0920241, 0.0322195)
-visible = true
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.100577, 0.0920241, 0.0322195)
 hand_pose = SubResource("Resource_c62t2")
 
 [node name="GrabPointHandRight" parent="." instance=ExtResource("5_f4f8u")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.0846747, 0.0920241, -0.0390758)
-visible = true
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.100577, 0.0920241, -0.0390758)
 hand_pose = SubResource("Resource_f4f8u")
 
 [node name="sauce" type="MeshInstance3D" parent="."]

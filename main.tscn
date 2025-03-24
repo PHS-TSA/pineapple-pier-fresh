@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dr1qgnhde7emj" path="res://Assets/Pirate-Assets/ship-small.fbx" id="12_dg77c"]
 [ext_resource type="PackedScene" uid="uid://dkgit5wtto8cn" path="res://pier-platform.tscn" id="13_w48qg"]
 [ext_resource type="PackedScene" uid="uid://wu07nej8gqke" path="res://Assets/Pirate-Assets/structure-roof.fbx" id="14_vivmo"]
-[ext_resource type="PackedScene" uid="uid://coj8ipoov7l1g" path="res://Assets/Food-Assets/hot-dog.fbx" id="15_2cqfq"]
+[ext_resource type="PackedScene" uid="uid://cujg3gocnerhv" path="res://hotdog.tscn" id="15_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://caa86i2blac1j" path="res://Assets/Pirate-Assets/crate.fbx" id="15_vivmo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
@@ -160,6 +160,9 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane"]
 shape = SubResource("ConvexPolygonShape3D_h2yge")
+
+[node name="HotdogStand" parent="." instance=ExtResource("15_vivmo")]
+transform = Transform3D(-0.8, -1.88745e-07, 0, 1.20797e-07, -1.25, 0, 0, 0, 1.2, -3.02006, 0.968157, 1.00252)
 
 [node name="MilkBottleGame" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06252, 0, 0)
@@ -645,8 +648,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_yaehf")
 visible = false
 shape = SubResource("ConvexPolygonShape3D_074og")
 
-[node name="hot-dog" parent="." instance=ExtResource("15_2cqfq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.80007, 0.957941, -0.655389)
+[node name="HotDog" parent="." instance=ExtResource("15_2cqfq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74263, 0.994516, 1.66136)
 
 [connection signal="button_pressed" from="MilkBottleGame/MilkGameButton/Pole/MilkButton" to="MilkBottleGame/MilkBottleObjectContainer" method="_on_milk_button_button_pressed"]
 [connection signal="body_entered" from="MilkBottleGame/MilkArea" to="MilkBottleGame/MilkBottleObjectContainer" method="_on_milk_area_body_entered"]
