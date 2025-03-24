@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cubnfhtjta63d"]
+
+[ext_resource type="PackedScene" uid="uid://caa86i2blac1j" path="res://Assets/Pirate-Assets/crate.fbx" id="1_uep05"]
+
+[node name="crate" instance=ExtResource("1_uep05")]

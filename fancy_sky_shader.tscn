@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dd8t0rgu5btbs"]
 
-[ext_resource type="Shader" uid="uid://c8h1i16i2h7ov" path="res://stylized-sky.gdshader" id="1_ddqho"]
+[ext_resource type="Shader" uid="uid://c8h1i16i2h7ov" path="res://Scripts/stylized-sky.gdshader" id="1_ddqho"]
 [ext_resource type="Texture2D" path="res://Assets/sun-3.png" id="2_buwv1"]
 
 [sub_resource type="Curve" id="Curve_oyacp"]

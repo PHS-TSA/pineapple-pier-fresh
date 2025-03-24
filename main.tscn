@@ -1,30 +1,23 @@
-[gd_scene load_steps=33 format=3 uid="uid://dkqfmagjsdm07"]
+[gd_scene load_steps=39 format=3 uid="uid://dkqfmagjsdm07"]
 
-[ext_resource type="Script" uid="uid://cohbke6ncegqs" path="res://Game_Logic.gd" id="1_5vw27"]
+[ext_resource type="Script" uid="uid://cohbke6ncegqs" path="res://Scripts/Game_Logic.gd" id="1_5vw27"]
 [ext_resource type="Script" uid="uid://bp5ix0qc0l30h" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://de2fykkg6ttnv" path="res://player.tscn" id="2_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cd65vnfm84udm" path="res://milk_bottle.tscn" id="4_1bvp3"]
-[ext_resource type="Script" uid="uid://622k3d44ebei" path="res://milk_bottle_game_logic.gd" id="5_kek77"]
+[ext_resource type="Script" uid="uid://622k3d44ebei" path="res://Scripts/milk_bottle_game_logic.gd" id="5_kek77"]
 [ext_resource type="PackedScene" uid="uid://d348tu74h3moo" path="res://ball.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://n2jo6br62m48" path="res://boring_sky_shader.tscn" id="6_272bh"]
 [ext_resource type="AudioStream" uid="uid://cutypwo7e5q8h" path="res://Assets/Audio/YAY - Sound Effect.mp3" id="8_4c57u"]
 [ext_resource type="PackedScene" uid="uid://cme66uldrjl2i" path="res://addons/godot-xr-tools/interactables/interactable_area_button.tscn" id="8_kek77"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_0xm2m"]
-size = Vector3(1, 1, 0.5)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0xm2m"]
-points = PackedVector3Array(0.5, 0.5, 0.25, 0.5, 0.5, -0.25, -0.5, 0.5, 0.25, 0.5, -0.5, 0.25, 0.5, -0.5, -0.25, -0.5, 0.5, -0.25, -0.5, -0.5, 0.25, -0.5, -0.5, -0.25)
-
-[sub_resource type="BoxMesh" id="BoxMesh_1bvp3"]
-size = Vector3(0.1, 0.1, 0.1)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lquwl"]
-points = PackedVector3Array(0.05, 0.05, 0.05, 0.05, 0.05, -0.05, -0.05, 0.05, 0.05, 0.05, -0.05, 0.05, 0.05, -0.05, -0.05, -0.05, 0.05, -0.05, -0.05, -0.05, 0.05, -0.05, -0.05, -0.05)
+[ext_resource type="PackedScene" uid="uid://bwmhemix03yfj" path="res://Assets/Shaders/grass/normal_grass.tscn" id="11_dg77c"]
+[ext_resource type="PackedScene" uid="uid://dsoxd16bwjk1y" path="res://Assets/Shaders/water.tscn" id="11_efxa6"]
+[ext_resource type="PackedScene" uid="uid://dr1qgnhde7emj" path="res://Assets/Pirate-Assets/ship-small.fbx" id="12_dg77c"]
+[ext_resource type="PackedScene" uid="uid://dkgit5wtto8cn" path="res://pier-platform.tscn" id="13_w48qg"]
+[ext_resource type="PackedScene" uid="uid://wu07nej8gqke" path="res://Assets/Pirate-Assets/structure-roof.fbx" id="14_vivmo"]
+[ext_resource type="PackedScene" uid="uid://caa86i2blac1j" path="res://Assets/Pirate-Assets/crate.fbx" id="15_vivmo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
-albedo_color = Color(0.707967, 0.707967, 0.707967, 1)
+albedo_color = Color(0, 0.584314, 0.352941, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_h2yge"]
 material = SubResource("StandardMaterial3D_0xm2m")
@@ -83,12 +76,16 @@ radial_segments = 8
 rings = 1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cxops"]
+albedo_color = Color(0.302591, 0.161532, 0.0290597, 1)
 metallic = 0.59
 roughness = 0.41
 uv1_scale = Vector3(1, 4, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0273w"]
 size = Vector3(0.4, 0.04, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vivmo"]
+albedo_color = Color(0.301961, 0.160784, 0.027451, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0tokh"]
 size = Vector3(0.4, 0.04, 0.3)
@@ -109,6 +106,19 @@ albedo_color = Color(0.760784, 0.164706, 0.0823529, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_kek77"]
 size = Vector3(1, 0.927002, 0.134277)
 
+[sub_resource type="BoxMesh" id="BoxMesh_kek77"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4c57u"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_efxa6"]
+albedo_color = Color(0.898039, 0.921569, 0.203922, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dg77c"]
+points = PackedVector3Array(-0.05, -0.1, 0, -0.0497651, -0.1, -0.00490407, -0.0497651, -0.1, 0.00489428, -0.05, 0.1, 0, -0.0490407, -0.1, -0.0097592, -0.0497651, 0.1, -0.00490407, -0.0490407, -0.1, 0.00974941, -0.0497651, 0.1, 0.00489428, -0.0478563, -0.1, -0.0145164, -0.0490407, 0.1, -0.0097592, -0.0478563, -0.1, 0.0145067, -0.0490407, 0.1, 0.00974941, -0.046202, -0.1, -0.0191367, -0.0478563, 0.1, -0.0145164, -0.046202, -0.1, 0.0191269, -0.0478563, 0.1, 0.0145067, -0.0440975, -0.1, -0.0235709, -0.046202, 0.1, -0.0191367, -0.0440975, -0.1, 0.0235611, -0.046202, 0.1, 0.0191269, -0.0415818, -0.1, -0.02778, -0.0440975, 0.1, -0.0235709, -0.0415818, -0.1, 0.0277702, -0.0440975, 0.1, 0.0235611, -0.0386551, -0.1, -0.0317247, -0.0415818, 0.1, -0.02778, -0.0386551, -0.1, 0.031715, -0.0415818, 0.1, 0.0277702, -0.0353563, -0.1, -0.0353563, -0.0386551, 0.1, -0.0317247, -0.0353563, -0.1, 0.0353465, -0.0386551, 0.1, 0.031715, -0.0317247, -0.1, -0.0386551, -0.0353563, 0.1, -0.0353563, -0.0317247, -0.1, 0.0386453, -0.0353563, 0.1, 0.0353465, -0.02778, -0.1, -0.0415818, -0.0317247, 0.1, -0.0386551, -0.02778, -0.1, 0.041572, -0.0317247, 0.1, 0.0386453, -0.0235709, -0.1, -0.0440975, -0.02778, 0.1, -0.0415818, -0.0235709, -0.1, 0.0440877, -0.02778, 0.1, 0.041572, -0.0191367, -0.1, -0.046202, -0.0235709, 0.1, -0.0440975, -0.0191367, -0.1, 0.0461922, -0.0235709, 0.1, 0.0440877, -0.0145164, -0.1, -0.0478563, -0.0191367, 0.1, -0.046202, -0.0145164, -0.1, 0.0478465, -0.0191367, 0.1, 0.0461922, -0.0097592, -0.1, -0.0490407, -0.0145164, 0.1, -0.0478563, -0.0097592, -0.1, 0.0490309, -0.0145164, 0.1, 0.0478465, -0.00490407, -0.1, -0.0497651, -0.0097592, 0.1, -0.0490407, -0.00490407, -0.1, 0.0497553, -0.0097592, 0.1, 0.0490309, 0, -0.1, -0.05, -0.00490407, 0.1, -0.0497651, 0, -0.1, 0.05, -0.00490407, 0.1, 0.0497553, 0.00489428, -0.1, -0.0497651, 0, 0.1, -0.05, 0.00489428, -0.1, 0.0497553, 0, 0.1, 0.05, 0.00974941, -0.1, -0.0490407, 0.00489428, 0.1, -0.0497651, 0.00974941, -0.1, 0.0490309, 0.00489428, 0.1, 0.0497553, 0.0145067, -0.1, -0.0478563, 0.00974941, 0.1, -0.0490407, 0.0145067, -0.1, 0.0478465, 0.00974941, 0.1, 0.0490309, 0.0191269, -0.1, -0.046202, 0.0145067, 0.1, -0.0478563, 0.0191269, -0.1, 0.0461922, 0.0145067, 0.1, 0.0478465, 0.0235611, -0.1, -0.0440975, 0.0191269, 0.1, -0.046202, 0.0235611, -0.1, 0.0440877, 0.0191269, 0.1, 0.0461922, 0.0277702, -0.1, -0.0415818, 0.0235611, 0.1, -0.0440975, 0.0277702, -0.1, 0.041572, 0.0235611, 0.1, 0.0440877, 0.031715, -0.1, -0.0386551, 0.0277702, 0.1, -0.0415818, 0.031715, -0.1, 0.0386453, 0.0277702, 0.1, 0.041572, 0.0353465, -0.1, -0.0353563, 0.031715, 0.1, -0.0386551, 0.0353465, -0.1, 0.0353465, 0.031715, 0.1, 0.0386453, 0.0386453, -0.1, -0.0317247, 0.0353465, 0.1, -0.0353563, 0.0386453, -0.1, 0.031715, 0.0353465, 0.1, 0.0353465, 0.041572, -0.1, -0.02778, 0.0386453, 0.1, -0.0317247, 0.041572, -0.1, 0.0277702, 0.0386453, 0.1, 0.031715, 0.0440877, -0.1, -0.0235709, 0.041572, 0.1, -0.02778, 0.0440877, -0.1, 0.0235611, 0.041572, 0.1, 0.0277702, 0.0461922, -0.1, -0.0191367, 0.0440877, 0.1, -0.0235709, 0.0461922, -0.1, 0.0191269, 0.0440877, 0.1, 0.0235611, 0.0478465, -0.1, -0.0145164, 0.0461922, 0.1, -0.0191367, 0.0478465, -0.1, 0.0145067, 0.0461922, 0.1, 0.0191269, 0.0490309, -0.1, -0.0097592, 0.0478465, 0.1, -0.0145164, 0.0490309, -0.1, 0.00974941, 0.0478465, 0.1, 0.0145067, 0.0497553, -0.1, -0.00490407, 0.0490309, 0.1, -0.0097592, 0.0497553, -0.1, 0.00489428, 0.0490309, 0.1, 0.00974941, 0.05, -0.1, 0, 0.0497553, 0.1, -0.00490407, 0.0497553, 0.1, 0.00489428, 0.05, 0.1, 0)
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_5vw27")
 
@@ -116,43 +126,13 @@ script = ExtResource("1_5vw27")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
+[node name="BoringSkyShader" parent="." instance=ExtResource("6_272bh")]
+
 [node name="XRToolsStartXR" type="Node" parent="."]
 script = ExtResource("1_ig7tw")
 metadata/_custom_type_script = "uid://bp5ix0qc0l30h"
 
 [node name="XROrigin3D" parent="." instance=ExtResource("2_0xm2m")]
-
-[node name="BallStand" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.502149, -0.587744)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="BallStand"]
-layers = 3
-mesh = SubResource("BoxMesh_0xm2m")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BallStand"]
-shape = SubResource("ConvexPolygonShape3D_0xm2m")
-
-[node name="BottleStand" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.502149, -2.88057)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="BottleStand"]
-layers = 3
-mesh = SubResource("BoxMesh_0xm2m")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="BottleStand"]
-shape = SubResource("ConvexPolygonShape3D_0xm2m")
-
-[node name="PickableObject" parent="." instance=ExtResource("3_h2yge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.93416, 1.07755, -0.573666)
-collision_layer = 5
-mass = 10.0
-picked_up_layer = 65537
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PickableObject"]
-mesh = SubResource("BoxMesh_1bvp3")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="PickableObject"]
-shape = SubResource("ConvexPolygonShape3D_lquwl")
 
 [node name="Plane" type="StaticBody3D" parent="."]
 
@@ -163,32 +143,41 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane"]
 shape = SubResource("ConvexPolygonShape3D_h2yge")
 
-[node name="MilkBottleObjectContainer" type="Node3D" parent="."]
+[node name="MilkBottleGame" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.06252, 0, 0)
+
+[node name="BallStand" parent="MilkBottleGame" instance=ExtResource("15_vivmo")]
+transform = Transform3D(2.55712e-08, -8.2503e-15, 1, -8.83325e-08, -1.25, -3.10588e-22, 0.585, -1.88745e-07, -4.37114e-08, -0.00556517, 0.964669, -0.65036)
+
+[node name="MilkBottleStand" parent="MilkBottleGame" instance=ExtResource("15_vivmo")]
+transform = Transform3D(2.55712e-08, -8.58031e-15, 1, -8.83325e-08, -1.3, -3.10588e-22, 0.585, -1.96295e-07, -4.37114e-08, -0.00556517, 1.00262, -2.80501)
+
+[node name="MilkBottleObjectContainer" type="Node3D" parent="MilkBottleGame"]
 unique_name_in_owner = true
 script = ExtResource("5_kek77")
 
-[node name="milk-bottle" parent="MilkBottleObjectContainer" instance=ExtResource("4_1bvp3")]
+[node name="milk-bottle" parent="MilkBottleGame/MilkBottleObjectContainer" instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.208576, 1.01131, -2.87899)
 
-[node name="milk-bottle2" parent="MilkBottleObjectContainer" instance=ExtResource("4_1bvp3")]
+[node name="milk-bottle2" parent="MilkBottleGame/MilkBottleObjectContainer" instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172288, 1.01131, -2.85157)
 
-[node name="milk-bottle3" parent="MilkBottleObjectContainer" instance=ExtResource("4_1bvp3")]
+[node name="milk-bottle3" parent="MilkBottleGame/MilkBottleObjectContainer" instance=ExtResource("4_1bvp3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0256032, 1.48098, -2.85157)
 
-[node name="Ball" parent="MilkBottleObjectContainer" instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.224207, 1.08215, -0.492723)
+[node name="Ball" parent="MilkBottleGame/MilkBottleObjectContainer" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.224207, 1.05839, -0.492723)
 
-[node name="Ball2" parent="MilkBottleObjectContainer" instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000435546, 1.08215, -0.492723)
+[node name="Ball2" parent="MilkBottleGame/MilkBottleObjectContainer" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000435591, 1.05839, -0.492723)
 
-[node name="Ball3" parent="MilkBottleObjectContainer" instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233104, 1.08215, -0.492723)
+[node name="Ball3" parent="MilkBottleGame/MilkBottleObjectContainer" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233104, 1.05839, -0.492723)
 
-[node name="Confetti" type="Node3D" parent="."]
+[node name="Confetti" type="Node3D" parent="MilkBottleGame"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0402215, 0.203292, -1.82595)
 
-[node name="MilkConfetti" type="GPUParticles3D" parent="Confetti"]
+[node name="MilkConfetti" type="GPUParticles3D" parent="MilkBottleGame/Confetti"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.705352, 0)
 emitting = false
@@ -200,80 +189,135 @@ trail_lifetime = 0.2
 process_material = SubResource("ParticleProcessMaterial_smimb")
 draw_pass_1 = SubResource("RibbonTrailMesh_sf15k")
 
-[node name="MilkYay" type="AudioStreamPlayer3D" parent="Confetti"]
+[node name="MilkYay" type="AudioStreamPlayer3D" parent="MilkBottleGame/Confetti"]
 unique_name_in_owner = true
 stream = ExtResource("8_4c57u")
 volume_db = 14.187
 
-[node name="BoringSkyShader" parent="." instance=ExtResource("6_272bh")]
-
-[node name="MilkGameButton" type="Node3D" parent="."]
+[node name="MilkGameButton" type="Node3D" parent="MilkBottleGame"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14185, -0.349359, -0.11235)
 
-[node name="Pole" type="MeshInstance3D" parent="MilkGameButton"]
+[node name="Pole" type="MeshInstance3D" parent="MilkBottleGame/MilkGameButton"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, -0.75)
 mesh = SubResource("CylinderMesh_7f0ok")
 surface_material_override/0 = SubResource("StandardMaterial3D_cxops")
 
-[node name="Table" type="StaticBody3D" parent="MilkGameButton/Pole"]
+[node name="Table" type="StaticBody3D" parent="MilkBottleGame/MilkGameButton/Pole"]
 transform = Transform3D(1, 0, 0, 0, 0.929358, -0.369179, 0, 0.369179, 0.929358, 0, 0.702817, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="MilkGameButton/Pole/Table"]
+[node name="Mesh" type="MeshInstance3D" parent="MilkBottleGame/MilkGameButton/Pole/Table"]
 mesh = SubResource("BoxMesh_0273w")
 skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_vivmo")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MilkGameButton/Pole/Table"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MilkBottleGame/MilkGameButton/Pole/Table"]
 shape = SubResource("BoxShape3D_0tokh")
 
-[node name="MilkButton" parent="MilkGameButton/Pole" instance=ExtResource("8_kek77")]
+[node name="MilkButton" parent="MilkBottleGame/MilkGameButton/Pole" instance=ExtResource("8_kek77")]
 transform = Transform3D(1, 0, 0, 0, 0.929358, -0.369179, 0, 0.369179, 0.929358, 0, 0.702817, 0)
 button = NodePath("Button")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MilkGameButton/Pole/MilkButton"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MilkBottleGame/MilkGameButton/Pole/MilkButton"]
 shape = SubResource("SphereShape3D_62pep")
 
-[node name="Button" type="MeshInstance3D" parent="MilkGameButton/Pole/MilkButton"]
+[node name="Button" type="MeshInstance3D" parent="MilkBottleGame/MilkGameButton/Pole/MilkButton"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0436053, -1.19209e-07)
 mesh = SubResource("CylinderMesh_wjqor")
 skeleton = NodePath("../../Table/Mesh")
 surface_material_override/0 = SubResource("StandardMaterial3D_lql4b")
 
-[node name="Ball1Marker" type="Marker3D" parent="."]
+[node name="Ball1Marker" type="Marker3D" parent="MilkBottleGame"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.224207, 1.08215, -0.492723)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.224207, 1.06012, -0.492723)
 
-[node name="Ball2Marker" type="Marker3D" parent="."]
+[node name="Ball2Marker" type="Marker3D" parent="MilkBottleGame"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000435546, 1.08215, -0.492723)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000435591, 1.06012, -0.492723)
 
-[node name="Ball3Marker" type="Marker3D" parent="."]
+[node name="Ball3Marker" type="Marker3D" parent="MilkBottleGame"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233104, 1.08215, -0.492723)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.233104, 1.06012, -0.492723)
 
-[node name="Milk1Marker" type="Marker3D" parent="."]
+[node name="Milk1Marker" type="Marker3D" parent="MilkBottleGame"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.208576, 1.01131, -2.87899)
 
-[node name="Milk2Marker" type="Marker3D" parent="."]
+[node name="Milk2Marker" type="Marker3D" parent="MilkBottleGame"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172288, 1.01131, -2.85157)
 
-[node name="Milk3Marker" type="Marker3D" parent="."]
+[node name="Milk3Marker" type="Marker3D" parent="MilkBottleGame"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0256032, 1.48098, -2.85157)
 
-[node name="MilkArea" type="Area3D" parent="."]
+[node name="MilkArea" type="Area3D" parent="MilkBottleGame"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43906, -2.84308)
 collision_layer = 65539
 collision_mask = 65539
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MilkArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MilkBottleGame/MilkArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0223389, 0.280273)
 shape = SubResource("BoxShape3D_kek77")
 
-[node name="MilkTimer" type="Timer" parent="."]
+[node name="MilkTimer" type="Timer" parent="MilkBottleGame"]
 unique_name_in_owner = true
 wait_time = 2.0
 
-[connection signal="button_pressed" from="MilkGameButton/Pole/MilkButton" to="MilkBottleObjectContainer" method="_on_milk_button_button_pressed"]
-[connection signal="body_entered" from="MilkArea" to="MilkBottleObjectContainer" method="_on_milk_area_body_entered"]
+[node name="Plinko" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.63034, 0.0698919, -2.80225)
+visible = false
+
+[node name="BackBoard" type="MeshInstance3D" parent="Plinko"]
+transform = Transform3D(1.17073, 0, 0, 0, 2.08817, 0, 0, 0, 0.249633, 0, 1.07496, 0)
+mesh = SubResource("BoxMesh_kek77")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Plinko"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.380054, 0.220339)
+mesh = SubResource("CylinderMesh_4c57u")
+surface_material_override/0 = SubResource("StandardMaterial3D_efxa6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Plinko/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plinko/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_dg77c")
+
+[node name="Ball4" parent="Plinko" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.490672, 0.210585, 0.20683)
+
+[node name="Ball5" parent="Plinko" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.256154, 0.210585, 0.20683)
+
+[node name="Ball6" parent="Plinko" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0155022, 0.210585, 0.20683)
+
+[node name="Ball7" parent="Plinko" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219525, 0.21056, 0.20683)
+
+[node name="Ball8" parent="Plinko" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.446418, 0.210585, 0.20683)
+
+[node name="Water" parent="." instance=ExtResource("11_efxa6")]
+transform = Transform3D(0.997825, 0, 0, 0, 0.997825, 0, 0, 0, 0.997825, 0, -0.334, 0)
+visible = false
+
+[node name="Node3D" parent="." instance=ExtResource("11_dg77c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.134554, 0.060237, -0.586741)
+visible = false
+
+[node name="ship-small" parent="." instance=ExtResource("12_dg77c")]
+transform = Transform3D(0.155123, 0, 0.475328, 0, 0.5, 0, -0.475328, 0, 0.155123, -5.7751, -0.642539, -11.0549)
+
+[node name="structure-platform" parent="." instance=ExtResource("13_w48qg")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.384653, -0.672298, -5.87697)
+
+[node name="structure-platform2" parent="." instance=ExtResource("13_w48qg")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 2.24642, -0.672298, -5.87697)
+
+[node name="structure-platform3" parent="." instance=ExtResource("13_w48qg")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -1.5222, -0.672298, -5.87697)
+
+[node name="structure-roof" parent="." instance=ExtResource("14_vivmo")]
+transform = Transform3D(1, 0, 0, 0, 1.1, 0, 0, 0, 1, 2.99142, 0.0327561, -3.0681)
+
+[connection signal="button_pressed" from="MilkBottleGame/MilkGameButton/Pole/MilkButton" to="MilkBottleGame/MilkBottleObjectContainer" method="_on_milk_button_button_pressed"]
+[connection signal="body_entered" from="MilkBottleGame/MilkArea" to="MilkBottleGame/MilkBottleObjectContainer" method="_on_milk_area_body_entered"]

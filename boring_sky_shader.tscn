@@ -12,6 +12,7 @@ sky_material = SubResource("ProceduralSkyMaterial_5u63d")
 [sub_resource type="Environment" id="Environment_obv80"]
 background_mode = 2
 sky = SubResource("Sky_1bvp3")
+sdfgi_enabled = true
 adjustment_enabled = true
 
 [node name="BoringSkyShader" type="WorldEnvironment"]
