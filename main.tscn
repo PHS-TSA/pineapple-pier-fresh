@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dkqfmagjsdm07"]
+[gd_scene load_steps=45 format=3 uid="uid://dkqfmagjsdm07"]
 
 [ext_resource type="Script" uid="uid://cohbke6ncegqs" path="res://Scripts/Game_Logic.gd" id="1_5vw27"]
 [ext_resource type="Script" uid="uid://bp5ix0qc0l30h" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="1_ig7tw"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dr1qgnhde7emj" path="res://Assets/Pirate-Assets/ship-small.fbx" id="12_dg77c"]
 [ext_resource type="PackedScene" uid="uid://dkgit5wtto8cn" path="res://pier-platform.tscn" id="13_w48qg"]
 [ext_resource type="PackedScene" uid="uid://wu07nej8gqke" path="res://Assets/Pirate-Assets/structure-roof.fbx" id="14_vivmo"]
+[ext_resource type="PackedScene" uid="uid://coj8ipoov7l1g" path="res://Assets/Food-Assets/hot-dog.fbx" id="15_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://caa86i2blac1j" path="res://Assets/Pirate-Assets/crate.fbx" id="15_vivmo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
@@ -643,6 +644,9 @@ surface_material_override/0 = SubResource("StandardMaterial3D_yaehf")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BalloonPopBoard/Balloon25/StaticBody3D"]
 visible = false
 shape = SubResource("ConvexPolygonShape3D_074og")
+
+[node name="hot-dog" parent="." instance=ExtResource("15_2cqfq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.80007, 0.957941, -0.655389)
 
 [connection signal="button_pressed" from="MilkBottleGame/MilkGameButton/Pole/MilkButton" to="MilkBottleGame/MilkBottleObjectContainer" method="_on_milk_button_button_pressed"]
 [connection signal="body_entered" from="MilkBottleGame/MilkArea" to="MilkBottleGame/MilkBottleObjectContainer" method="_on_milk_area_body_entered"]
