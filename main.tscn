@@ -651,5 +651,11 @@ shape = SubResource("ConvexPolygonShape3D_074og")
 [node name="HotDog" parent="." instance=ExtResource("15_2cqfq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74263, 0.994516, 1.66136)
 
+[node name="HotDog2" parent="." instance=ExtResource("15_2cqfq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74263, 0.994516, 1.47465)
+
+[node name="HotDog3" parent="." instance=ExtResource("15_2cqfq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.74263, 0.994516, 1.25108)
+
 [connection signal="button_pressed" from="MilkBottleGame/MilkGameButton/Pole/MilkButton" to="MilkBottleGame/MilkBottleObjectContainer" method="_on_milk_button_button_pressed"]
 [connection signal="body_entered" from="MilkBottleGame/MilkArea" to="MilkBottleGame/MilkBottleObjectContainer" method="_on_milk_area_body_entered"]

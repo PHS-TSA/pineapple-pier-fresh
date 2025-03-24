@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://de2fykkg6ttnv"]
+[gd_scene load_steps=9 format=3 uid="uid://de2fykkg6ttnv"]
 
+[ext_resource type="Script" uid="uid://n2e6txbg1ju3" path="res://mouth.gd" id="1_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://cy03d57iyrci" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_physics_hand.tscn" id="1_2hs0m"]
 [ext_resource type="Script" uid="uid://b8p6yt7yj0cro" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="2_hqtel"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_2hs0m"]
@@ -7,9 +8,20 @@
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="5_1jxqw"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_dw050"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_2hs0m"]
+radius = 0.18694
+
 [node name="XROrigin3D" type="XROrigin3D"]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
+
+[node name="HotDogArea" type="Area3D" parent="XRCamera3D"]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_1jxqw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XRCamera3D/HotDogArea"]
+shape = SubResource("SphereShape3D_2hs0m")
 
 [node name="LeftHandController" type="XRController3D" parent="."]
 tracker = &"left_hand"
@@ -39,3 +51,5 @@ metadata/_custom_type_script = "uid://b8p6yt7yj0cro"
 
 [node name="PlayerBody" parent="." instance=ExtResource("5_1jxqw")]
 collision_mask = 1021
+
+[connection signal="body_entered" from="XRCamera3D/HotDogArea" to="XRCamera3D/HotDogArea" method="_on_body_entered"]
