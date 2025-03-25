@@ -55,6 +55,6 @@ ranged_distance = 10.0
 metadata/_custom_type_script = "uid://b8p6yt7yj0cro"
 
 [node name="PlayerBody" parent="." instance=ExtResource("5_1jxqw")]
-collision_mask = 1021
+collision_mask = 1
 
 [connection signal="body_entered" from="XRCamera3D/HotDogArea" to="XRCamera3D/HotDogArea" method="_on_body_entered"]
