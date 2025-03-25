@@ -3,7 +3,9 @@ extends Node3D
 var buttonPress:bool = false
 const HOTDOG = preload("res://hotdog.tscn")
 var played = false
-var playerWin = false
+var playerWin:bool
+
+
 func _process(delta):
 	
 	if(buttonPress):
@@ -14,11 +16,12 @@ func _process(delta):
 			#Add in losing sad horn
 			%ContestTimer.stop()
 			buttonPress = false
+			playerWin = false
+			#Sad trombone here
 			for child in %HotDogs.get_children():
 				child.queue_free()
 		if(len(%HotDogs.get_children()) == 0):
-			var playerWin = true
-			print("running")
+			playerWin = true
 			%ContestTimer.stop()
 			%HotDogConfetti.emitting = true
 			%HotDogYay.play()
@@ -28,18 +31,22 @@ func _process(delta):
 			
 			%HotDogTimerLabel.text = "You Win!"
 	elif(not played):
+		
 		%HotDogTimerLabel.text = "Start 
 		Contest?"
 	elif playerWin:
+		
 		%HotDogTimerLabel.text = "You Win!"
 	elif (not playerWin):
+		
 		%HotDogTimerLabel.text = "You Lost!"
 	else:
-		%HotDogTimerLabel.text = "You Win!"
+		
+		%HotDogTimerLabel.text = "Start 
+		Contest?"
 		
 
 func _on_hot_dog_button_button_pressed(button):
-	playerWin = false
 	played = true
 	for child in %HotDogs.get_children():
 		child.queue_free()
