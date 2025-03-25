@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cd65vnfm84udm" path="res://milk_bottle.tscn" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://622k3d44ebei" path="res://Scripts/milk_bottle_game_logic.gd" id="5_kek77"]
 [ext_resource type="PackedScene" uid="uid://d348tu74h3moo" path="res://ball.tscn" id="6_7mycd"]
-[ext_resource type="PackedScene" uid="uid://n2jo6br62m48" path="res://boring_sky_shader.tscn" id="6_272bh"]
 [ext_resource type="AudioStream" uid="uid://cutypwo7e5q8h" path="res://Assets/Audio/YAY - Sound Effect.mp3" id="8_4c57u"]
 [ext_resource type="PackedScene" uid="uid://cme66uldrjl2i" path="res://addons/godot-xr-tools/interactables/interactable_area_button.tscn" id="8_kek77"]
 [ext_resource type="PackedScene" uid="uid://dsoxd16bwjk1y" path="res://Assets/Shaders/water.tscn" id="11_efxa6"]
@@ -21,6 +20,7 @@
 [ext_resource type="Shader" uid="uid://mwaecu45o4yk" path="res://Assets/Shaders/water_plane.gdshader" id="19_cegan"]
 [ext_resource type="PackedScene" uid="uid://cf2bxaqfj0omc" path="res://Assets/Duck.fbx" id="20_82xsv"]
 [ext_resource type="PackedScene" uid="uid://b5eldiupxefya" path="res://ducky.tscn" id="21_getpj"]
+[ext_resource type="PackedScene" uid="uid://dd8t0rgu5btbs" path="res://fancy_sky_shader.tscn" id="21_ryguw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
 albedo_color = Color(0, 0.584314, 0.352941, 1)
@@ -288,8 +288,6 @@ script = ExtResource("1_5vw27")
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="BoringSkyShader" parent="." instance=ExtResource("6_272bh")]
-
 [node name="XRToolsStartXR" type="Node" parent="."]
 script = ExtResource("1_ig7tw")
 metadata/_custom_type_script = "uid://bp5ix0qc0l30h"
@@ -474,7 +472,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.446418, 0.210585, 0.20683)
 
 [node name="Water" parent="." instance=ExtResource("11_efxa6")]
 transform = Transform3D(0.997825, 0, 0, 0, 0.997825, 0, 0, 0, 0.997825, 0, -0.334, 0)
-visible = false
 
 [node name="ship-small" parent="." instance=ExtResource("12_dg77c")]
 transform = Transform3D(0.155123, 0, 0.475328, 0, 0.5, 0, -0.475328, 0, 0.155123, -5.7751, -0.642539, -11.0549)
@@ -489,6 +486,7 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 2.24642, -0.672298, 
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -1.5222, -0.672298, -5.87697)
 
 [node name="BalloonPopBoard" type="Node3D" parent="."]
+visible = false
 
 [node name="Board" type="MeshInstance3D" parent="BalloonPopBoard"]
 transform = Transform3D(1.79578, 0, 0, 0, 1.74485, 0, 0, 0, 0.30364, -2.94857, 1.2478, -3.43993)
@@ -1016,6 +1014,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78317, 0.381774, 3.5978)
 
 [node name="Ducky" parent="." instance=ExtResource("21_getpj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59304, 1.01705, -0.536019)
+
+[node name="FancySkyShader" parent="." instance=ExtResource("21_ryguw")]
 
 [connection signal="button_pressed" from="MilkBottleGame/MilkGameButton/Pole/MilkButton" to="MilkBottleGame/MilkBottleObjectContainer" method="_on_milk_button_button_pressed"]
 [connection signal="body_entered" from="MilkBottleGame/MilkArea" to="MilkBottleGame/MilkBottleObjectContainer" method="_on_milk_area_body_entered"]

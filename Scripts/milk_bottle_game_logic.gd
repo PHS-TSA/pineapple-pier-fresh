@@ -14,8 +14,8 @@ func _ready():
 
 func _on_milk_button_button_pressed(button):
 	%MilkTimer.stop()
-	print(bottles)
-	print("started running")
+	
+	
 	for i in range(len(self.get_children())):
 		self.get_child(i).queue_free()
 	
@@ -46,10 +46,12 @@ func _on_milk_button_button_pressed(button):
 	
 	bottles.clear()
 	for i in range(len(self.get_children())):
-		print(self.get_child(i).scene_file_path)
+		
+		
 		if(self.get_child(i).scene_file_path == "res://milk_bottle.tscn"):
 			bottles.append(self.get_child(i).get_child(0))
-	print(bottles)
+	
+	
 
 #func _physics_process(delta):
 	
@@ -59,16 +61,12 @@ func _on_milk_button_button_pressed(button):
 
 func _on_milk_area_body_entered(body):
 	if(%MilkTimer.time_left == 0 && body.scene_file_path == "res://ball.tscn"):
-		print("timer starting")
-		print(bottles)
 		%MilkTimer.start(2)
 
 	while(%MilkTimer.time_left > 0):
 		var knockedOver = true
 		# I was going to write this better but I thought it'd be funnier to have eli review this. Introducing the if statement from hell
-		print("are we working?")
-		print(body)
-		print(bottles)
+		
 		for bottle in bottles:
 			if(abs(bottle.rotation_degrees.x) < 40 && abs(bottle.rotation_degrees.z) < 40):
 				knockedOver = false
