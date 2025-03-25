@@ -1,0 +1,62 @@
+[gd_scene load_steps=10 format=3 uid="uid://btbc5xeklxg5x"]
+
+[ext_resource type="Shader" uid="uid://mwaecu45o4yk" path="res://Assets/Shaders/water_plane.gdshader" id="1_pln2l"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pln2l"]
+top_radius = 0.4
+bottom_radius = 0.4
+height = 0.1
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_su50w"]
+noise_type = 3
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_x3k5j"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_su50w")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3ywy7"]
+noise_type = 3
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3e4vp"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_3ywy7")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_m3fqf"]
+frequency = 0.005
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ccprg"]
+seamless = true
+noise = SubResource("FastNoiseLite_m3fqf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jp5k5"]
+render_priority = -1
+shader = ExtResource("1_pln2l")
+shader_parameter/albedo = Color(0.054902, 0.411765, 0.843137, 1)
+shader_parameter/albedo2 = Color(0, 0.47451, 0.764706, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.02
+shader_parameter/wave = SubResource("NoiseTexture2D_ccprg")
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_x3k5j")
+shader_parameter/texture_normal2 = SubResource("NoiseTexture2D_3e4vp")
+shader_parameter/wave_direction = Vector2(2, 0)
+shader_parameter/wave_direction2 = Vector2(0, 1)
+shader_parameter/time_scale = 0.04
+shader_parameter/noise_scale = 10.0
+shader_parameter/height_scale = 0.05
+shader_parameter/color_deep = Color(0, 0, 0, 1)
+shader_parameter/color_shallow = Color(0, 0, 0, 1)
+shader_parameter/beers_law = 2.0
+shader_parameter/depth_offset = -0.75
+shader_parameter/edge_scale = 0.1
+shader_parameter/near = 1.0
+shader_parameter/far = 100.0
+shader_parameter/edge_color = Color(0, 0, 0, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+transform = Transform3D(0.997825, 0, 0, 0, 0.997825, 0, 0, 0, 0.997825, 0, -0.0464466, -0.001)
+mesh = SubResource("CylinderMesh_pln2l")
+surface_material_override/0 = SubResource("ShaderMaterial_jp5k5")

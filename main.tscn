@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://dkqfmagjsdm07"]
+[gd_scene load_steps=67 format=4 uid="uid://dkqfmagjsdm07"]
 
 [ext_resource type="Script" uid="uid://cohbke6ncegqs" path="res://Scripts/Game_Logic.gd" id="1_5vw27"]
 [ext_resource type="Script" uid="uid://bp5ix0qc0l30h" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="1_ig7tw"]
@@ -17,6 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://dj1hdtlosf23i" path="res://Assets/Pirate-Assets/Textures/colormap.png" id="16_yaehf"]
 [ext_resource type="AudioStream" uid="uid://d3ldr1m4ibhpl" path="res://Assets/Audio/StartBell.mp3" id="17_yaehf"]
 [ext_resource type="AudioStream" uid="uid://ckraq64v7h5pa" path="res://Assets/Audio/Hotdog.mp3" id="18_074og"]
+[ext_resource type="PackedScene" uid="uid://dl57kyfqcagtd" path="res://inflatable_pool.tscn" id="18_cegan"]
+[ext_resource type="Shader" uid="uid://mwaecu45o4yk" path="res://Assets/Shaders/water_plane.gdshader" id="19_cegan"]
+[ext_resource type="PackedScene" uid="uid://cf2bxaqfj0omc" path="res://Assets/Duck.fbx" id="20_82xsv"]
+[ext_resource type="PackedScene" uid="uid://b5eldiupxefya" path="res://ducky.tscn" id="21_getpj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
 albedo_color = Color(0, 0.584314, 0.352941, 1)
@@ -222,6 +226,60 @@ shadow_mesh = SubResource("ArrayMesh_mrr0y")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_074og"]
 size = Vector3(0.945068, 0.815308, 1.30664)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pln2l"]
+top_radius = 0.4
+bottom_radius = 0.4
+height = 0.1
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_su50w"]
+noise_type = 3
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_x3k5j"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_su50w")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3ywy7"]
+noise_type = 3
+fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_3e4vp"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_3ywy7")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_m3fqf"]
+frequency = 0.005
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ccprg"]
+seamless = true
+noise = SubResource("FastNoiseLite_m3fqf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jp5k5"]
+render_priority = -1
+shader = ExtResource("19_cegan")
+shader_parameter/albedo = Color(0.054902, 0.411765, 0.843137, 1)
+shader_parameter/albedo2 = Color(0, 0.47451, 0.764706, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.02
+shader_parameter/wave = SubResource("NoiseTexture2D_ccprg")
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_x3k5j")
+shader_parameter/texture_normal2 = SubResource("NoiseTexture2D_3e4vp")
+shader_parameter/wave_direction = Vector2(2, 0)
+shader_parameter/wave_direction2 = Vector2(0, 1)
+shader_parameter/time_scale = 0.04
+shader_parameter/noise_scale = 10.0
+shader_parameter/height_scale = 0.05
+shader_parameter/color_deep = Color(0, 0, 0, 1)
+shader_parameter/color_shallow = Color(0, 0, 0, 1)
+shader_parameter/beers_law = 2.0
+shader_parameter/depth_offset = -0.75
+shader_parameter/edge_scale = 0.1
+shader_parameter/near = 1.0
+shader_parameter/far = 100.0
+shader_parameter/edge_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_5vw27")
@@ -943,6 +1001,21 @@ draw_pass_1 = SubResource("RibbonTrailMesh_sf15k")
 unique_name_in_owner = true
 stream = ExtResource("8_4c57u")
 volume_db = 14.187
+
+[node name="InflatablePool" parent="." instance=ExtResource("18_cegan")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.08665, 0.261658, 3.36245)
+
+[node name="PoolWater" type="MeshInstance3D" parent="InflatablePool"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, -0.0435462, 0)
+visible = false
+mesh = SubResource("CylinderMesh_pln2l")
+surface_material_override/0 = SubResource("ShaderMaterial_jp5k5")
+
+[node name="Duck" parent="." instance=ExtResource("20_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78317, 0.381774, 3.5978)
+
+[node name="Ducky" parent="." instance=ExtResource("21_getpj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59304, 1.01705, -0.536019)
 
 [connection signal="button_pressed" from="MilkBottleGame/MilkGameButton/Pole/MilkButton" to="MilkBottleGame/MilkBottleObjectContainer" method="_on_milk_button_button_pressed"]
 [connection signal="body_entered" from="MilkBottleGame/MilkArea" to="MilkBottleGame/MilkBottleObjectContainer" method="_on_milk_area_body_entered"]
