@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dn7yst6cfern6"
 path.s3tc="res://.godot/imported/dart_phong2SG_BaseColor.png-71ce15c21126918536a582375fbfa17c.s3tc.ctex"
+path.etc2="res://.godot/imported/dart_phong2SG_BaseColor.png-71ce15c21126918536a582375fbfa17c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Dart/dart_phong2SG_BaseColor.png"
-dest_files=["res://.godot/imported/dart_phong2SG_BaseColor.png-71ce15c21126918536a582375fbfa17c.s3tc.ctex"]
+dest_files=["res://.godot/imported/dart_phong2SG_BaseColor.png-71ce15c21126918536a582375fbfa17c.s3tc.ctex", "res://.godot/imported/dart_phong2SG_BaseColor.png-71ce15c21126918536a582375fbfa17c.etc2.ctex"]
 
 [params]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dkqfmagjsdm07"]
+[gd_scene load_steps=41 format=3 uid="uid://dkqfmagjsdm07"]
 
 [ext_resource type="Script" uid="uid://cohbke6ncegqs" path="res://Scripts/Game_Logic.gd" id="1_5vw27"]
 [ext_resource type="Script" uid="uid://bp5ix0qc0l30h" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="1_ig7tw"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cme66uldrjl2i" path="res://addons/godot-xr-tools/interactables/interactable_area_button.tscn" id="8_kek77"]
 [ext_resource type="PackedScene" uid="uid://dsoxd16bwjk1y" path="res://Assets/Shaders/water.tscn" id="11_efxa6"]
 [ext_resource type="PackedScene" uid="uid://dr1qgnhde7emj" path="res://Assets/Pirate-Assets/ship-small.fbx" id="12_dg77c"]
+[ext_resource type="PackedScene" uid="uid://c4rwag4a6x607" path="res://plinko.tscn" id="12_vivmo"]
 [ext_resource type="PackedScene" uid="uid://dkgit5wtto8cn" path="res://pier-platform.tscn" id="13_w48qg"]
 [ext_resource type="PackedScene" uid="uid://wu07nej8gqke" path="res://Assets/Pirate-Assets/structure-roof.fbx" id="14_vivmo"]
 [ext_resource type="PackedScene" uid="uid://caa86i2blac1j" path="res://Assets/Pirate-Assets/crate.fbx" id="15_vivmo"]
@@ -105,19 +106,6 @@ albedo_color = Color(0.760784, 0.164706, 0.0823529, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_kek77"]
 size = Vector3(1, 0.927002, 0.134277)
 
-[sub_resource type="BoxMesh" id="BoxMesh_kek77"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_4c57u"]
-top_radius = 0.05
-bottom_radius = 0.05
-height = 0.2
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_efxa6"]
-albedo_color = Color(0.898039, 0.921569, 0.203922, 1)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dg77c"]
-points = PackedVector3Array(-0.05, -0.1, 0, -0.0497651, -0.1, -0.00490407, -0.0497651, -0.1, 0.00489428, -0.05, 0.1, 0, -0.0490407, -0.1, -0.0097592, -0.0497651, 0.1, -0.00490407, -0.0490407, -0.1, 0.00974941, -0.0497651, 0.1, 0.00489428, -0.0478563, -0.1, -0.0145164, -0.0490407, 0.1, -0.0097592, -0.0478563, -0.1, 0.0145067, -0.0490407, 0.1, 0.00974941, -0.046202, -0.1, -0.0191367, -0.0478563, 0.1, -0.0145164, -0.046202, -0.1, 0.0191269, -0.0478563, 0.1, 0.0145067, -0.0440975, -0.1, -0.0235709, -0.046202, 0.1, -0.0191367, -0.0440975, -0.1, 0.0235611, -0.046202, 0.1, 0.0191269, -0.0415818, -0.1, -0.02778, -0.0440975, 0.1, -0.0235709, -0.0415818, -0.1, 0.0277702, -0.0440975, 0.1, 0.0235611, -0.0386551, -0.1, -0.0317247, -0.0415818, 0.1, -0.02778, -0.0386551, -0.1, 0.031715, -0.0415818, 0.1, 0.0277702, -0.0353563, -0.1, -0.0353563, -0.0386551, 0.1, -0.0317247, -0.0353563, -0.1, 0.0353465, -0.0386551, 0.1, 0.031715, -0.0317247, -0.1, -0.0386551, -0.0353563, 0.1, -0.0353563, -0.0317247, -0.1, 0.0386453, -0.0353563, 0.1, 0.0353465, -0.02778, -0.1, -0.0415818, -0.0317247, 0.1, -0.0386551, -0.02778, -0.1, 0.041572, -0.0317247, 0.1, 0.0386453, -0.0235709, -0.1, -0.0440975, -0.02778, 0.1, -0.0415818, -0.0235709, -0.1, 0.0440877, -0.02778, 0.1, 0.041572, -0.0191367, -0.1, -0.046202, -0.0235709, 0.1, -0.0440975, -0.0191367, -0.1, 0.0461922, -0.0235709, 0.1, 0.0440877, -0.0145164, -0.1, -0.0478563, -0.0191367, 0.1, -0.046202, -0.0145164, -0.1, 0.0478465, -0.0191367, 0.1, 0.0461922, -0.0097592, -0.1, -0.0490407, -0.0145164, 0.1, -0.0478563, -0.0097592, -0.1, 0.0490309, -0.0145164, 0.1, 0.0478465, -0.00490407, -0.1, -0.0497651, -0.0097592, 0.1, -0.0490407, -0.00490407, -0.1, 0.0497553, -0.0097592, 0.1, 0.0490309, 0, -0.1, -0.05, -0.00490407, 0.1, -0.0497651, 0, -0.1, 0.05, -0.00490407, 0.1, 0.0497553, 0.00489428, -0.1, -0.0497651, 0, 0.1, -0.05, 0.00489428, -0.1, 0.0497553, 0, 0.1, 0.05, 0.00974941, -0.1, -0.0490407, 0.00489428, 0.1, -0.0497651, 0.00974941, -0.1, 0.0490309, 0.00489428, 0.1, 0.0497553, 0.0145067, -0.1, -0.0478563, 0.00974941, 0.1, -0.0490407, 0.0145067, -0.1, 0.0478465, 0.00974941, 0.1, 0.0490309, 0.0191269, -0.1, -0.046202, 0.0145067, 0.1, -0.0478563, 0.0191269, -0.1, 0.0461922, 0.0145067, 0.1, 0.0478465, 0.0235611, -0.1, -0.0440975, 0.0191269, 0.1, -0.046202, 0.0235611, -0.1, 0.0440877, 0.0191269, 0.1, 0.0461922, 0.0277702, -0.1, -0.0415818, 0.0235611, 0.1, -0.0440975, 0.0277702, -0.1, 0.041572, 0.0235611, 0.1, 0.0440877, 0.031715, -0.1, -0.0386551, 0.0277702, 0.1, -0.0415818, 0.031715, -0.1, 0.0386453, 0.0277702, 0.1, 0.041572, 0.0353465, -0.1, -0.0353563, 0.031715, 0.1, -0.0386551, 0.0353465, -0.1, 0.0353465, 0.031715, 0.1, 0.0386453, 0.0386453, -0.1, -0.0317247, 0.0353465, 0.1, -0.0353563, 0.0386453, -0.1, 0.031715, 0.0353465, 0.1, 0.0353465, 0.041572, -0.1, -0.02778, 0.0386453, 0.1, -0.0317247, 0.041572, -0.1, 0.0277702, 0.0386453, 0.1, 0.031715, 0.0440877, -0.1, -0.0235709, 0.041572, 0.1, -0.02778, 0.0440877, -0.1, 0.0235611, 0.041572, 0.1, 0.0277702, 0.0461922, -0.1, -0.0191367, 0.0440877, 0.1, -0.0235709, 0.0461922, -0.1, 0.0191269, 0.0440877, 0.1, 0.0235611, 0.0478465, -0.1, -0.0145164, 0.0461922, 0.1, -0.0191367, 0.0478465, -0.1, 0.0145067, 0.0461922, 0.1, 0.0191269, 0.0490309, -0.1, -0.0097592, 0.0478465, 0.1, -0.0145164, 0.0490309, -0.1, 0.00974941, 0.0478465, 0.1, 0.0145067, 0.0497553, -0.1, -0.00490407, 0.0490309, 0.1, -0.0097592, 0.0497553, -0.1, 0.00489428, 0.0490309, 0.1, 0.00974941, 0.05, -0.1, 0, 0.0497553, 0.1, -0.00490407, 0.0497553, 0.1, 0.00489428, 0.05, 0.1, 0)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w48qg"]
 albedo_color = Color(0.606885, 0.345816, 0.0979771, 1)
 
@@ -150,6 +138,7 @@ script = ExtResource("1_ig7tw")
 metadata/_custom_type_script = "uid://bp5ix0qc0l30h"
 
 [node name="XROrigin3D" parent="." instance=ExtResource("2_0xm2m")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.71968, 1.75268, -0.378117)
 
 [node name="Plane" type="StaticBody3D" parent="."]
 
@@ -283,38 +272,8 @@ wait_time = 2.0
 [node name="MilkBottleGameStructure" parent="MilkBottleGame" instance=ExtResource("14_vivmo")]
 transform = Transform3D(1, 0, 0, 0, 1.1, 0, 0, 0, 1, -0.0711031, 0.0327561, -3.0681)
 
-[node name="Plinko" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.63034, 0.0698919, -2.80225)
-visible = false
-
-[node name="BackBoard" type="MeshInstance3D" parent="Plinko"]
-transform = Transform3D(1.17073, 0, 0, 0, 2.08817, 0, 0, 0, 0.249633, 0, 1.07496, 0)
-mesh = SubResource("BoxMesh_kek77")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Plinko"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.380054, 0.220339)
-mesh = SubResource("CylinderMesh_4c57u")
-surface_material_override/0 = SubResource("StandardMaterial3D_efxa6")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Plinko/MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Plinko/MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConvexPolygonShape3D_dg77c")
-
-[node name="Ball4" parent="Plinko" instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.490672, 0.210585, 0.20683)
-
-[node name="Ball5" parent="Plinko" instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.256154, 0.210585, 0.20683)
-
-[node name="Ball6" parent="Plinko" instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0155022, 0.210585, 0.20683)
-
-[node name="Ball7" parent="Plinko" instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.219525, 0.21056, 0.20683)
-
-[node name="Ball8" parent="Plinko" instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.446418, 0.210585, 0.20683)
+[node name="Plinko" parent="." instance=ExtResource("12_vivmo")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -1.99873, 0.126947, 3.43878)
 
 [node name="Water" parent="." instance=ExtResource("11_efxa6")]
 transform = Transform3D(0.997825, 0, 0, 0, 0.997825, 0, 0, 0, 0.997825, 0, -0.334, 0)

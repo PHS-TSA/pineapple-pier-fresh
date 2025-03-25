@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4rwag4a6x607"]
+
+[ext_resource type="PackedScene" uid="uid://d348tu74h3moo" path="res://ball.tscn" id="1_61enm"]
+[ext_resource type="PackedScene" uid="uid://dvxcw5s1tmove" path="res://peg.tscn" id="2_l2p5j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kek77"]
+
+[node name="Plinko" type="Node3D"]
+
+[node name="BackBoard" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.17073, 0, 0, 0, 2.08817, 0, 0, 0, 0.249633, 0, 1.075, 0)
+mesh = SubResource("BoxMesh_kek77")
+skeleton = NodePath("")
+
+[node name="Ball1" parent="." instance=ExtResource("1_61enm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36, 1.85, 0.207)
+
+[node name="Ball2" parent="." instance=ExtResource("1_61enm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12, 1.85, 0.207)
+
+[node name="Ball3" parent="." instance=ExtResource("1_61enm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12, 1.85, 0.207)
+
+[node name="Ball4" parent="." instance=ExtResource("1_61enm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36, 1.85, 0.207)
+
+[node name="Peg" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.48, 1.5, 0.22)
+
+[node name="Peg2" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.24, 1.5, 0.22)
+
+[node name="Peg3" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.5, 0.22)
+
+[node name="Peg4" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.24, 1.5, 0.22)
+
+[node name="Peg5" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.48, 1.5, 0.22)
+
+[node name="Peg6" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.36, 1.25, 0.22)
+
+[node name="Peg7" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.12, 1.25, 0.22)
+
+[node name="Peg8" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.12, 1.25, 0.22)
+
+[node name="Peg9" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.36, 1.25, 0.22)
+
+[node name="Peg10" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.477242, 1, 0.219948)
+
+[node name="Peg11" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.237242, 1, 0.219948)
+
+[node name="Peg12" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0.22)
+
+[node name="Peg13" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.24, 1, 0.22)
+
+[node name="Peg14" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.48, 1, 0.22)
+
+[node name="Peg15" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.36, 0.75, 0.22)
+
+[node name="Peg16" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.12, 0.75, 0.22)
+
+[node name="Peg17" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.12, 0.75, 0.22)
+
+[node name="Peg18" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.36, 0.75, 0.22)
+
+[node name="Peg19" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.477242, 0.5, 0.219948)
+
+[node name="Peg20" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.237242, 0.5, 0.219948)
+
+[node name="Peg21" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0.22)
+
+[node name="Peg22" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.24, 0.5, 0.22)
+
+[node name="Peg23" parent="." instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.48, 0.5, 0.22)
