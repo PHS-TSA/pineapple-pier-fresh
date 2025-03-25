@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=4 uid="uid://dkqfmagjsdm07"]
+[gd_scene load_steps=68 format=4 uid="uid://dkqfmagjsdm07"]
 
 [ext_resource type="Script" uid="uid://cohbke6ncegqs" path="res://Scripts/Game_Logic.gd" id="1_5vw27"]
 [ext_resource type="Script" uid="uid://bp5ix0qc0l30h" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="1_ig7tw"]
@@ -12,14 +12,15 @@
 [ext_resource type="PackedScene" uid="uid://dr1qgnhde7emj" path="res://Assets/Pirate-Assets/ship-small.fbx" id="12_dg77c"]
 [ext_resource type="PackedScene" uid="uid://dkgit5wtto8cn" path="res://pier-platform.tscn" id="13_w48qg"]
 [ext_resource type="PackedScene" uid="uid://caa86i2blac1j" path="res://Assets/Pirate-Assets/crate.fbx" id="15_vivmo"]
-[ext_resource type="Script" uid="uid://oyf8qk2ufjbd" path="res://hot-dog-logic.gd" id="15_yaehf"]
+[ext_resource type="Script" path="res://hot-dog-logic.gd" id="15_yaehf"]
+[ext_resource type="PackedScene" uid="uid://bu31vxeyo0dyb" path="res://Components/Plinko/plinko.tscn" id="16_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://dj1hdtlosf23i" path="res://Assets/Pirate-Assets/Textures/colormap.png" id="16_yaehf"]
 [ext_resource type="AudioStream" uid="uid://d3ldr1m4ibhpl" path="res://Assets/Audio/StartBell.mp3" id="17_yaehf"]
 [ext_resource type="AudioStream" uid="uid://ckraq64v7h5pa" path="res://Assets/Audio/Hotdog.mp3" id="18_074og"]
-[ext_resource type="PackedScene" uid="uid://dl57kyfqcagtd" path="res://inflatable_pool.tscn" id="18_cegan"]
+[ext_resource type="PackedScene" path="res://inflatable_pool.tscn" id="18_cegan"]
 [ext_resource type="Shader" uid="uid://mwaecu45o4yk" path="res://Assets/Shaders/water_plane.gdshader" id="19_cegan"]
 [ext_resource type="PackedScene" uid="uid://cf2bxaqfj0omc" path="res://Assets/Duck.fbx" id="20_82xsv"]
-[ext_resource type="PackedScene" uid="uid://b5eldiupxefya" path="res://ducky.tscn" id="21_getpj"]
+[ext_resource type="PackedScene" path="res://ducky.tscn" id="21_getpj"]
 [ext_resource type="PackedScene" uid="uid://dd8t0rgu5btbs" path="res://fancy_sky_shader.tscn" id="21_ryguw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
@@ -486,7 +487,6 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 2.24642, -0.672298, 
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -1.5222, -0.672298, -5.87697)
 
 [node name="BalloonPopBoard" type="Node3D" parent="."]
-visible = false
 
 [node name="Board" type="MeshInstance3D" parent="BalloonPopBoard"]
 transform = Transform3D(1.79578, 0, 0, 0, 1.74485, 0, 0, 0, 0.30364, -2.94857, 1.2478, -3.43993)
@@ -1016,6 +1016,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78317, 0.381774, 3.5978)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59304, 1.01705, -0.536019)
 
 [node name="FancySkyShader" parent="." instance=ExtResource("21_ryguw")]
+
+[node name="Plinko2" parent="." instance=ExtResource("16_2cqfq")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.44847, -0.00507522, -0.0187616)
 
 [connection signal="button_pressed" from="MilkBottleGame/MilkGameButton/Pole/MilkButton" to="MilkBottleGame/MilkBottleObjectContainer" method="_on_milk_button_button_pressed"]
 [connection signal="body_entered" from="MilkBottleGame/MilkArea" to="MilkBottleGame/MilkBottleObjectContainer" method="_on_milk_area_body_entered"]

@@ -1,0 +1,526 @@
+[gd_scene load_steps=14 format=3 uid="uid://bu31vxeyo0dyb"]
+
+[ext_resource type="PackedScene" uid="uid://d348tu74h3moo" path="res://ball.tscn" id="1_61enm"]
+[ext_resource type="PackedScene" uid="uid://dvxcw5s1tmove" path="res://Components/Plinko/peg.tscn" id="2_l2p5j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kek77"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tvybc"]
+albedo_color = Color(0.301961, 0.160784, 0.027451, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tvybc"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_imma3"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1eues"]
+transparency = 1
+albedo_color = Color(0.823529, 1, 1, 0.227451)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8bcq8"]
+albedo_color = Color(0.443137, 1, 0.196078, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fx3qk"]
+albedo_color = Color(0.443137, 1, 0.196078, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_1eues"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_imma3"]
+albedo_color = Color(0.301961, 0.160784, 0.027451, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1eues"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fx3qk"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Plinko" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00606012, 0, -2.38419e-05)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.848259, -0.529578, 0.00174109, 0.521853, -0.836435, -0.167468, 0.0901438, -0.141148, 0.985876, 0, 0, 1.823)
+shadow_enabled = true
+
+[node name="BackBoard" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.23296, 0, 0, 0, 2.88158, 0, 0, 0, 0.249535, 0.000242651, 1.27312, 8.26418e-05)
+mesh = SubResource("BoxMesh_kek77")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BackBoard"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BackBoard/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tvybc")
+
+[node name="BackBoard2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.24361, 0, 0, 0, 2.88158, 0, 0, 0, 0.249535, 1.22347, 1.27312, 8.26418e-05)
+mesh = SubResource("BoxMesh_kek77")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BackBoard2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BackBoard2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_imma3")
+
+[node name="BackBoard3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.23296, 0, 0, 0, 2.88158, 0, 0, 0, 0.0546345, -0.00139415, 1.27312, 0.422456)
+mesh = SubResource("BoxMesh_kek77")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_1eues")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BackBoard3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BackBoard3/StaticBody3D"]
+visible = false
+shape = SubResource("ConcavePolygonShape3D_tvybc")
+
+[node name="BackBoard4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.24361, 0, 0, 0, 2.88158, 0, 0, 0, 0.0546345, 1.22183, 1.27312, 0.422456)
+mesh = SubResource("BoxMesh_kek77")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_1eues")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BackBoard4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BackBoard4/StaticBody3D"]
+visible = false
+shape = SubResource("ConcavePolygonShape3D_imma3")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12166, 2.13164)
+visible = false
+
+[node name="Pegs" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.18806, 0, 0, 0)
+
+[node name="Peg" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.48, 1.5, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg2" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.24, 1.5, 0.22)
+
+[node name="Peg3" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.5, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg4" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.24, 1.5, 0.22)
+
+[node name="Peg5" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.552626, 1.5, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg6" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.36, 1.25, 0.22)
+
+[node name="Peg7" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.12, 1.25, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg8" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.12, 1.25, 0.22)
+
+[node name="Peg9" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.36, 1.25, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg10" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.477242, 1, 0.219948)
+
+[node name="Peg11" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.237242, 1, 0.219948)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg12" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0.22)
+
+[node name="Peg13" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.24, 1, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg14" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.552626, 1, 0.22)
+
+[node name="Peg15" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.36, 0.75, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg47" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.620352, 0.75, 0.22)
+
+[node name="Peg48" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.61696, 1.25622, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg16" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.12, 0.75, 0.22)
+
+[node name="Peg17" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.12, 0.75, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg18" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.36, 0.75, 0.22)
+
+[node name="Peg19" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.477242, 0.5, 0.219948)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg20" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.237242, 0.5, 0.219948)
+
+[node name="Peg21" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg22" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.24, 0.5, 0.22)
+
+[node name="Peg23" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.552626, 0.5, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg24" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.77457, 1.5, 0.22)
+
+[node name="Peg25" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.46371, 1.5, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg26" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.22371, 1.5, 0.22)
+
+[node name="Peg27" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.983709, 1.5, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg28" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.743709, 1.5, 0.22)
+
+[node name="Peg29" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.58371, 1.25, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg30" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.34371, 1.25, 0.22)
+
+[node name="Peg31" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.10371, 1.25, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg32" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.863709, 1.25, 0.22)
+
+[node name="Peg33" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.77182, 1.00276, 0.219948)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg34" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.46095, 1, 0.219948)
+
+[node name="Peg35" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.22371, 1, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg36" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.983709, 1, 0.22)
+
+[node name="Peg37" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.743709, 1, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg38" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.58371, 0.75, 0.22)
+
+[node name="Peg39" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.34371, 0.75, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg40" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.10371, 0.75, 0.22)
+
+[node name="Peg41" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.863709, 0.75, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg42" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.77182, 0.50276, 0.219948)
+
+[node name="Peg43" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.46095, 0.5, 0.219948)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg44" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.22371, 0.5, 0.22)
+
+[node name="Peg45" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.983709, 0.5, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
+
+[node name="Peg46" parent="Pegs" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.743709, 0.5, 0.22)
+
+[node name="Pegs2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.18806, 0, 1.0042, 0)
+
+[node name="Peg" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.48, 1.5, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
+
+[node name="Peg2" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.24, 1.5, 0.22)
+
+[node name="Peg3" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.5, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
+
+[node name="Peg4" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.24, 1.5, 0.22)
+
+[node name="Peg5" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.552626, 1.5, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
+
+[node name="Peg6" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.36, 1.25, 0.22)
+
+[node name="Peg7" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.12, 1.25, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
+
+[node name="Peg8" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.12, 1.25, 0.22)
+
+[node name="Peg9" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.36, 1.25, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
+
+[node name="Peg10" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.477242, 1, 0.219948)
+
+[node name="Peg11" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.237242, 1, 0.219948)
+surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
+
+[node name="Peg12" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0.22)
+
+[node name="Peg13" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.24, 1, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
+
+[node name="Peg14" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.552626, 1, 0.22)
+
+[node name="Peg15" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.36, 0.75, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
+
+[node name="Peg47" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.620352, 0.75, 0.22)
+
+[node name="Peg48" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.61696, 1.25622, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
+
+[node name="Peg16" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.12, 0.75, 0.22)
+
+[node name="Peg17" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.12, 0.75, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
+
+[node name="Peg18" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.36, 0.75, 0.22)
+
+[node name="Peg24" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.77457, 1.5, 0.22)
+
+[node name="Peg25" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.46371, 1.5, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
+
+[node name="Peg26" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.22371, 1.5, 0.22)
+
+[node name="Peg27" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.983709, 1.5, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
+
+[node name="Peg28" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.743709, 1.5, 0.22)
+
+[node name="Peg29" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.58371, 1.25, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
+
+[node name="Peg30" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.34371, 1.25, 0.22)
+
+[node name="Peg31" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.10371, 1.25, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
+
+[node name="Peg32" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.863709, 1.25, 0.22)
+
+[node name="Peg33" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.77182, 1.00276, 0.219948)
+surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
+
+[node name="Peg34" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.46095, 1, 0.219948)
+
+[node name="Peg35" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.22371, 1, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
+
+[node name="Peg36" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.983709, 1, 0.22)
+
+[node name="Peg37" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.743709, 1, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
+
+[node name="Peg38" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.58371, 0.75, 0.22)
+
+[node name="Peg39" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.34371, 0.75, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
+
+[node name="Peg40" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.10371, 0.75, 0.22)
+
+[node name="Peg41" parent="Pegs2" instance=ExtResource("2_l2p5j")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.863709, 0.75, 0.22)
+surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="LeftWall" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(0.106367, 0, -0.00277887, 0, 2.96095, 0, 0.000698035, 0, 0.423444, -0.604742, 1.22852, 0.205606)
+mesh = SubResource("BoxMesh_1eues")
+surface_material_override/0 = SubResource("StandardMaterial3D_imma3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/LeftWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/LeftWall/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0314341, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_1eues")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(0.0352148, 0, 0, 0, 0.563121, 0, 0, 0, 0.424077, -0.24, 0.153, 0.206005)
+mesh = SubResource("BoxMesh_1eues")
+surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MeshInstance3D3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_1eues")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(0.0352148, 0, 0, 0, 0.563121, 0, 0, 0, 0.424077, 0, 0.153, 0.206005)
+mesh = SubResource("BoxMesh_1eues")
+surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MeshInstance3D4/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_1eues")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(0.0352148, 0, 0, 0, 0.563121, 0, 0, 0, 0.424077, 0.237, 0.153, 0.206005)
+mesh = SubResource("BoxMesh_1eues")
+surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MeshInstance3D5/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_1eues")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(0.0352148, 0, 0, 0, 0.563121, 0, 0, 0, 0.424077, 0.477, 0.153, 0.206005)
+mesh = SubResource("BoxMesh_1eues")
+surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MeshInstance3D6/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_1eues")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(0.0352148, 0, 0, 0, 0.563121, 0, 0, 0, 0.424077, 0.744, 0.153, 0.206005)
+mesh = SubResource("BoxMesh_1eues")
+surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MeshInstance3D7/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_1eues")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(0.0352148, 0, 0, 0, 0.563121, 0, 0, 0, 0.424077, 0.984, 0.153, 0.206005)
+mesh = SubResource("BoxMesh_1eues")
+surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MeshInstance3D8/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_1eues")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(0.0352148, 0, 0, 0, 0.563121, 0, 0, 0, 0.424077, 1.224, 0.153, 0.206005)
+mesh = SubResource("BoxMesh_1eues")
+surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/MeshInstance3D9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MeshInstance3D9/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_1eues")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(0.0352148, 0, 0, 0, 0.563121, 0, 0, 0, 0.424077, 1.461, 0.153, 0.206005)
+mesh = SubResource("BoxMesh_1eues")
+surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/MeshInstance3D10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MeshInstance3D10/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_1eues")
+
+[node name="RightWall" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(0.106369, 0, 0, 0, 2.96095, 0, 0, 0, 0.423453, 1.83652, 1.23233, 0.206762)
+mesh = SubResource("BoxMesh_1eues")
+surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Walls/RightWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/RightWall/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_fx3qk")
+
+[node name="Ball" parent="." instance=ExtResource("1_61enm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.285864, 2.67936, 0.218357)
+
+[node name="Ball2" parent="." instance=ExtResource("1_61enm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0693833, 2.67936, 0.218357)
+
+[node name="Ball3" parent="." instance=ExtResource("1_61enm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.338827, 2.67936, 0.218357)
+
+[node name="Ball4" parent="." instance=ExtResource("1_61enm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.812616, 2.67936, 0.218357)
+
+[node name="Ball5" parent="." instance=ExtResource("1_61enm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09604, 2.67936, 0.218357)
