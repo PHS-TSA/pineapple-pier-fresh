@@ -1,6 +1,5 @@
-[gd_scene load_steps=14 format=3 uid="uid://bu31vxeyo0dyb"]
+[gd_scene load_steps=13 format=3 uid="uid://bu31vxeyo0dyb"]
 
-[ext_resource type="PackedScene" uid="uid://d348tu74h3moo" path="res://ball.tscn" id="1_61enm"]
 [ext_resource type="PackedScene" uid="uid://dvxcw5s1tmove" path="res://Components/Plinko/peg.tscn" id="2_l2p5j"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kek77"]
@@ -38,10 +37,6 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 [node name="Plinko" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00606012, 0, -2.38419e-05)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.848259, -0.529578, 0.00174109, 0.521853, -0.836435, -0.167468, 0.0901438, -0.141148, 0.985876, 0, 0, 1.823)
-shadow_enabled = true
-
 [node name="BackBoard" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.23296, 0, 0, 0, 2.88158, 0, 0, 0, 0.249535, 0.000242651, 1.27312, 8.26418e-05)
 mesh = SubResource("BoxMesh_kek77")
@@ -65,7 +60,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
 shape = SubResource("ConcavePolygonShape3D_imma3")
 
 [node name="BackBoard3" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.23296, 0, 0, 0, 2.88158, 0, 0, 0, 0.0546345, -0.00139415, 1.27312, 0.422456)
+transform = Transform3D(1.1874, 0, 0, 0, 2.88158, 0, 0, 0, 0.0546345, 0.0442259, 1.27312, 0.415766)
 mesh = SubResource("BoxMesh_kek77")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_1eues")
@@ -77,7 +72,7 @@ visible = false
 shape = SubResource("ConcavePolygonShape3D_tvybc")
 
 [node name="BackBoard4" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.24361, 0, 0, 0, 2.88158, 0, 0, 0, 0.0546345, 1.22183, 1.27312, 0.422456)
+transform = Transform3D(1.14326, 0, 0, 0, 2.88158, 0, 0, 0, 0.0546345, 1.20845, 1.27312, 0.418668)
 mesh = SubResource("BoxMesh_kek77")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_1eues")
@@ -87,10 +82,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_1eues")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="BackBoard4/StaticBody3D"]
 visible = false
 shape = SubResource("ConcavePolygonShape3D_imma3")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12166, 2.13164)
-visible = false
 
 [node name="Pegs" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.18806, 0, 0, 0)
@@ -166,18 +157,18 @@ surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.36, 0.75, 0.22)
 
 [node name="Peg19" parent="Pegs" instance=ExtResource("2_l2p5j")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.477242, 0.5, 0.219948)
+transform = Transform3D(0.8, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.477242, 0.5, 0.219948)
 surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
 
 [node name="Peg20" parent="Pegs" instance=ExtResource("2_l2p5j")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.237242, 0.5, 0.219948)
+transform = Transform3D(0.8, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.237242, 0.5, 0.219948)
 
 [node name="Peg21" parent="Pegs" instance=ExtResource("2_l2p5j")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0.22)
+transform = Transform3D(0.8, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.5, 0.22)
 surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
 
 [node name="Peg22" parent="Pegs" instance=ExtResource("2_l2p5j")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.24, 0.5, 0.22)
+transform = Transform3D(0.8, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.24, 0.5, 0.22)
 
 [node name="Peg23" parent="Pegs" instance=ExtResource("2_l2p5j")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.552626, 0.5, 0.22)
@@ -247,21 +238,21 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.8637
 surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
 
 [node name="Peg42" parent="Pegs" instance=ExtResource("2_l2p5j")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.77182, 0.50276, 0.219948)
+transform = Transform3D(0.8, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.77182, 0.50276, 0.219948)
 
 [node name="Peg43" parent="Pegs" instance=ExtResource("2_l2p5j")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.46095, 0.5, 0.219948)
+transform = Transform3D(0.8, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.46095, 0.5, 0.219948)
 surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
 
 [node name="Peg44" parent="Pegs" instance=ExtResource("2_l2p5j")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.22371, 0.5, 0.22)
+transform = Transform3D(0.8, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.22371, 0.5, 0.22)
 
 [node name="Peg45" parent="Pegs" instance=ExtResource("2_l2p5j")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.983709, 0.5, 0.22)
+transform = Transform3D(0.8, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.983709, 0.5, 0.22)
 surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
 
 [node name="Peg46" parent="Pegs" instance=ExtResource("2_l2p5j")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.743709, 0.5, 0.22)
+transform = Transform3D(0.8, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.743709, 0.5, 0.22)
 
 [node name="Pegs2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.18806, 0, 1.0042, 0)
@@ -402,7 +393,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
 [node name="Walls" type="Node3D" parent="."]
 
 [node name="LeftWall" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(0.106367, 0, -0.00277887, 0, 2.96095, 0, 0.000698035, 0, 0.423444, -0.604742, 1.22852, 0.205606)
+transform = Transform3D(0.106615, 0, -0.00371694, 0, 2.96095, 0, 0.000699665, 0, 0.566389, -0.604742, 1.24171, 0.159717)
 mesh = SubResource("BoxMesh_1eues")
 surface_material_override/0 = SubResource("StandardMaterial3D_imma3")
 
@@ -501,7 +492,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_1eues")
 
 [node name="RightWall" type="MeshInstance3D" parent="Walls"]
-transform = Transform3D(0.106369, 0, 0, 0, 2.96095, 0, 0, 0, 0.423453, 1.83652, 1.23233, 0.206762)
+transform = Transform3D(0.106617, 0, 0, 0, 2.96095, 0, 0, 0, 0.566401, 1.837, 1.242, 0.16)
 mesh = SubResource("BoxMesh_1eues")
 surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
 
@@ -510,17 +501,38 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/RightWall/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_fx3qk")
 
-[node name="Ball" parent="." instance=ExtResource("1_61enm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.285864, 2.67936, 0.218357)
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.624481, 0.181657, 0.408685)
+text = "75"
 
-[node name="Ball2" parent="." instance=ExtResource("1_61enm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0693833, 2.67936, 0.218357)
+[node name="Label3D6" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.873234, 0.181657, 0.408685)
+text = "10"
 
-[node name="Ball3" parent="." instance=ExtResource("1_61enm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.338827, 2.67936, 0.218357)
+[node name="Label3D7" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.10611, 0.181657, 0.408685)
+text = "50"
 
-[node name="Ball4" parent="." instance=ExtResource("1_61enm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.812616, 2.67936, 0.218357)
+[node name="Label3D8" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34769, 0.181657, 0.408685)
+text = "30"
 
-[node name="Ball5" parent="." instance=ExtResource("1_61enm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09604, 2.67936, 0.218357)
+[node name="Label3D9" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.60596, 0.181657, 0.408685)
+text = "20"
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.360192, 0.181657, 0.408685)
+text = "10"
+
+[node name="Label3D3" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.106248, 0.181657, 0.408685)
+text = "50"
+
+[node name="Label3D4" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127483, 0.181657, 0.408685)
+text = "30"
+
+[node name="Label3D5" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40013, 0.181657, 0.408685)
+text = "20"
