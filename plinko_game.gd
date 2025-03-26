@@ -3,6 +3,7 @@ extends Node3D
 const BALL = preload("res://plinko-ball.tscn")
 var spawners
 var ballsLeft = 10
+var ballEntered = 0
 var currentScore = 0
 var pauseOver = true
 
@@ -33,19 +34,32 @@ func _on_plinko_button_button_pressed(button: Variant) -> void:
 				child.queue_free()
 			ballsLeft = 10
 			currentScore = 0
+			ballEntered = 0
+			%WinLoseLabel.visible = false
 			%BallsLeftLabel.text = str(ballsLeft)
 			%PlinkoCurrent.text = ("Current: "+ str(currentScore))
 #Have these connect to a different function and pass in body
 
 #implement you win label that pops up if you win 
 #If balls left = 0 and this runs and the player loses play something and activate reset button
-func _on_area_body_entered(body, value): #20
-	print(body)
+func _on_area_body_entered(body, value):
 	currentScore += value
+	ballEntered += 1
 	%PlinkoCurrent.text = ("Current: "+ str(currentScore))
-	if(currentScore >= 500):
-		print("winner winner chicken dinner!")
+	if(currentScore >= 400):
+		%WinLoseLabel.text = "You Win!"
+		%WinLoseLabel.visible = true
+		%PlinkoConfetti.emitting = true
+		%PlinkoYay.play()
+		await get_tree().create_timer(0.5).timeout
+		%PlinkoConfetti.emitting = false
+		await get_tree().create_timer(4).timeout
+		pauseOver = true
+	
 	#Losing Logic
-	if(ballsLeft == 0):
-		print("loser lmao")
+	elif(ballsLeft == 0 and ballEntered == 10):
+		%WinLoseLabel.text = "You Lose!
+		Press the button 
+		to play again!"
+		%WinLoseLabel.visible = true
 		pauseOver = true
