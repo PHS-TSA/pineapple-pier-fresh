@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://br6qroopf4bx7"]
+
+[ext_resource type="PackedScene" uid="uid://bl1k1ixiuy84b" path="res://Assets/Gate/gate.fbx" id="1_15vrf"]
+
+[node name="gate" instance=ExtResource("1_15vrf")]
