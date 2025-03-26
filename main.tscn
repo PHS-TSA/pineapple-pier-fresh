@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://dkqfmagjsdm07"]
+[gd_scene load_steps=70 format=4 uid="uid://dkqfmagjsdm07"]
 
 [ext_resource type="Script" uid="uid://cohbke6ncegqs" path="res://Scripts/Game_Logic.gd" id="1_5vw27"]
 [ext_resource type="Script" uid="uid://bp5ix0qc0l30h" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="1_ig7tw"]
@@ -12,15 +12,15 @@
 [ext_resource type="PackedScene" uid="uid://dr1qgnhde7emj" path="res://Assets/Pirate-Assets/ship-small.fbx" id="12_dg77c"]
 [ext_resource type="PackedScene" uid="uid://dkgit5wtto8cn" path="res://pier-platform.tscn" id="13_w48qg"]
 [ext_resource type="PackedScene" uid="uid://caa86i2blac1j" path="res://Assets/Pirate-Assets/crate.fbx" id="15_vivmo"]
-[ext_resource type="Script" path="res://hot-dog-logic.gd" id="15_yaehf"]
+[ext_resource type="Script" uid="uid://oyf8qk2ufjbd" path="res://hot-dog-logic.gd" id="15_yaehf"]
 [ext_resource type="PackedScene" uid="uid://bu31vxeyo0dyb" path="res://Components/Plinko/plinko.tscn" id="16_2cqfq"]
 [ext_resource type="Texture2D" uid="uid://dj1hdtlosf23i" path="res://Assets/Pirate-Assets/Textures/colormap.png" id="16_yaehf"]
 [ext_resource type="AudioStream" uid="uid://d3ldr1m4ibhpl" path="res://Assets/Audio/StartBell.mp3" id="17_yaehf"]
 [ext_resource type="AudioStream" uid="uid://ckraq64v7h5pa" path="res://Assets/Audio/Hotdog.mp3" id="18_074og"]
-[ext_resource type="PackedScene" path="res://inflatable_pool.tscn" id="18_cegan"]
+[ext_resource type="PackedScene" uid="uid://dl57kyfqcagtd" path="res://inflatable_pool.tscn" id="18_cegan"]
 [ext_resource type="Shader" uid="uid://mwaecu45o4yk" path="res://Assets/Shaders/water_plane.gdshader" id="19_cegan"]
 [ext_resource type="PackedScene" uid="uid://cf2bxaqfj0omc" path="res://Assets/Duck.fbx" id="20_82xsv"]
-[ext_resource type="PackedScene" path="res://ducky.tscn" id="21_getpj"]
+[ext_resource type="PackedScene" uid="uid://b5eldiupxefya" path="res://ducky.tscn" id="21_getpj"]
 [ext_resource type="PackedScene" uid="uid://dd8t0rgu5btbs" path="res://fancy_sky_shader.tscn" id="21_ryguw"]
 [ext_resource type="Script" uid="uid://80ox4eevypof" path="res://plinko_game.gd" id="22_d13ii"]
 
@@ -269,6 +269,20 @@ shader_parameter/edge_scale = 0.1
 shader_parameter/near = 1.0
 shader_parameter/far = 100.0
 shader_parameter/edge_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d13ii"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1u8w0"]
+albedo_color = Color(0.301961, 0.160784, 0.027451, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0odxb"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lswn8"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d13ii"]
+size = Vector3(0.230949, 0.165283, 0.18171)
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_5vw27")
@@ -979,6 +993,22 @@ script = ExtResource("22_d13ii")
 [node name="PlinkoBoard" parent="PlinkoGame" instance=ExtResource("16_2cqfq")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.44847, -0.00507522, -0.0187616)
 
+[node name="PlinkoTitle" type="Label3D" parent="PlinkoGame/PlinkoBoard"]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0.618111, 4.03436, 0.130403)
+text = "PLINKO"
+font_size = 64
+
+[node name="PlinkoGoal" type="Label3D" parent="PlinkoGame/PlinkoBoard"]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0.618111, 3.59959, 0.130403)
+text = "GOAL: 500"
+font_size = 64
+
+[node name="PlinkoCurrent" type="Label3D" parent="PlinkoGame/PlinkoBoard"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 0.618111, 3.14379, 0.130403)
+text = "CURRENT: 0"
+font_size = 64
+
 [node name="PlinkoGameButton" type="Node3D" parent="PlinkoGame"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.05921, -0.387247, -1.78968)
 
@@ -990,6 +1020,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_cxops")
 [node name="Table" type="StaticBody3D" parent="PlinkoGame/PlinkoGameButton/Pole"]
 transform = Transform3D(1, 0, 0, 0, 0.929358, -0.369179, 0, 0.369179, 0.929358, 0, 0.702817, 0)
 
+[node name="BallsLeftLabel" type="Label3D" parent="PlinkoGame/PlinkoGameButton/Pole/Table"]
+unique_name_in_owner = true
+transform = Transform3D(1, 4.06393e-08, 2.76138e-08, -2.7574e-08, -0.000977606, 1, 4.06663e-08, -1, -0.000977606, 8.34465e-07, 0.0686746, -0.0118227)
+text = "10"
+font_size = 22
+
 [node name="Mesh" type="MeshInstance3D" parent="PlinkoGame/PlinkoGameButton/Pole/Table"]
 mesh = SubResource("BoxMesh_0273w")
 skeleton = NodePath("../..")
@@ -999,6 +1035,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_vivmo")
 shape = SubResource("BoxShape3D_0tokh")
 
 [node name="PlinkoButton" parent="PlinkoGame/PlinkoGameButton/Pole" instance=ExtResource("8_kek77")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.929358, -0.369179, 0, 0.369179, 0.929358, 0, 0.702817, 0)
 button = NodePath("Button")
 
@@ -1043,10 +1080,148 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22866, 2.58887, -1.40645)
 [node name="BallSpawn9" type="Marker3D" parent="PlinkoGame/PlinkoBallSpawners"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22866, 2.58887, -1.67559)
 
+[node name="BallSpawn10" type="Marker3D" parent="PlinkoGame/PlinkoBallSpawners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22866, 2.73438, -1.53813)
+
+[node name="BallSpawn11" type="Marker3D" parent="PlinkoGame/PlinkoBallSpawners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22866, 2.73438, -1.24647)
+
+[node name="BallSpawn12" type="Marker3D" parent="PlinkoGame/PlinkoBallSpawners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22866, 2.73438, -1.00051)
+
+[node name="BallSpawn13" type="Marker3D" parent="PlinkoGame/PlinkoBallSpawners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22866, 2.73438, -0.753533)
+
+[node name="BallSpawn14" type="Marker3D" parent="PlinkoGame/PlinkoBallSpawners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22866, 2.73438, -0.470434)
+
+[node name="BallSpawn15" type="Marker3D" parent="PlinkoGame/PlinkoBallSpawners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22866, 2.73438, -0.242268)
+
+[node name="BallSpawn16" type="Marker3D" parent="PlinkoGame/PlinkoBallSpawners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22866, 2.73438, -0.0316591)
+
+[node name="BallSpawn17" type="Marker3D" parent="PlinkoGame/PlinkoBallSpawners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22866, 2.73438, 0.223669)
+
 [node name="PlinkoBalls" type="Node3D" parent="PlinkoGame"]
 unique_name_in_owner = true
+
+[node name="BackBoard" type="MeshInstance3D" parent="PlinkoGame"]
+transform = Transform3D(-5.38944e-08, 0, 0.249535, 0, 2.88158, 0, -1.23296, 0, -1.09075e-08, -4.44939, 2.91036, -0.0182122)
+mesh = SubResource("BoxMesh_d13ii")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_1u8w0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PlinkoGame/BackBoard"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlinkoGame/BackBoard/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_0odxb")
+
+[node name="BackBoard2" type="MeshInstance3D" parent="PlinkoGame"]
+transform = Transform3D(-5.43599e-08, 0, 0.249535, 0, 2.88158, 0, -1.24361, 0, -1.09075e-08, -4.46051, 2.91036, -1.24139)
+mesh = SubResource("BoxMesh_d13ii")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_1u8w0")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PlinkoGame/BackBoard2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlinkoGame/BackBoard2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_lswn8")
+
+[node name="PlinkoScanners" type="Node3D" parent="PlinkoGame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.64684, 0, -0.680703)
+
+[node name="20Area" type="Area3D" parent="PlinkoGame/PlinkoScanners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.449759, 0.301718, 1.06633)
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlinkoGame/PlinkoScanners/20Area"]
+shape = SubResource("BoxShape3D_d13ii")
+
+[node name="30Area" type="Area3D" parent="PlinkoGame/PlinkoScanners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.449759, 0.301718, 0.755734)
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlinkoGame/PlinkoScanners/30Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0311102)
+shape = SubResource("BoxShape3D_d13ii")
+
+[node name="50Area" type="Area3D" parent="PlinkoGame/PlinkoScanners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.449759, 0.301718, 0.512026)
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlinkoGame/PlinkoScanners/50Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0329238)
+shape = SubResource("BoxShape3D_d13ii")
+
+[node name="10Area" type="Area3D" parent="PlinkoGame/PlinkoScanners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.449759, 0.301718, 0.269081)
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlinkoGame/PlinkoScanners/10Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0329238)
+shape = SubResource("BoxShape3D_d13ii")
+
+[node name="10Area2" type="Area3D" parent="PlinkoGame/PlinkoScanners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.450336, 0.301718, -0.236695)
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlinkoGame/PlinkoScanners/10Area2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0329238)
+shape = SubResource("BoxShape3D_d13ii")
+
+[node name="50Area2" type="Area3D" parent="PlinkoGame/PlinkoScanners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.450336, 0.301718, -0.475164)
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlinkoGame/PlinkoScanners/50Area2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0329238)
+shape = SubResource("BoxShape3D_d13ii")
+
+[node name="30Area2" type="Area3D" parent="PlinkoGame/PlinkoScanners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.450336, 0.301718, -0.715439)
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlinkoGame/PlinkoScanners/30Area2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0329238)
+shape = SubResource("BoxShape3D_d13ii")
+
+[node name="20Area2" type="Area3D" parent="PlinkoGame/PlinkoScanners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.450336, 0.301718, -0.98936)
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlinkoGame/PlinkoScanners/20Area2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0329238)
+shape = SubResource("BoxShape3D_d13ii")
+
+[node name="75Area" type="Area3D" parent="PlinkoGame/PlinkoScanners"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.449759, 0.301718, 0.0228261)
+collision_layer = 15
+collision_mask = 15
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlinkoGame/PlinkoScanners/75Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0329238)
+shape = SubResource("BoxShape3D_d13ii")
 
 [connection signal="button_pressed" from="MilkBottleGame/MilkGameButton/Pole/MilkButton" to="MilkBottleGame/MilkBottleObjectContainer" method="_on_milk_button_button_pressed"]
 [connection signal="body_entered" from="MilkBottleGame/MilkArea" to="MilkBottleGame/MilkBottleObjectContainer" method="_on_milk_area_body_entered"]
 [connection signal="button_pressed" from="HotDogContest/HotDogGameButton/Pole/HotDogButton" to="HotDogContest" method="_on_hot_dog_button_button_pressed"]
 [connection signal="button_pressed" from="PlinkoGame/PlinkoGameButton/Pole/PlinkoButton" to="PlinkoGame" method="_on_plinko_button_button_pressed"]
+[connection signal="body_entered" from="PlinkoGame/PlinkoScanners/20Area" to="PlinkoGame" method="_on_area_body_entered" binds= [20]]
+[connection signal="body_entered" from="PlinkoGame/PlinkoScanners/30Area" to="PlinkoGame" method="_on_area_body_entered" binds= [30]]
+[connection signal="body_entered" from="PlinkoGame/PlinkoScanners/50Area" to="PlinkoGame" method="_on_area_body_entered" binds= [50]]
+[connection signal="body_entered" from="PlinkoGame/PlinkoScanners/10Area" to="PlinkoGame" method="_on_area_body_entered" binds= [10]]
+[connection signal="body_entered" from="PlinkoGame/PlinkoScanners/10Area2" to="PlinkoGame" method="_on_area_body_entered" binds= [10]]
+[connection signal="body_entered" from="PlinkoGame/PlinkoScanners/50Area2" to="PlinkoGame" method="_on_area_body_entered" binds= [50]]
+[connection signal="body_entered" from="PlinkoGame/PlinkoScanners/30Area2" to="PlinkoGame" method="_on_area_body_entered" binds= [30]]
+[connection signal="body_entered" from="PlinkoGame/PlinkoScanners/20Area2" to="PlinkoGame" method="_on_area_body_entered" binds= [20]]
+[connection signal="body_entered" from="PlinkoGame/PlinkoScanners/75Area" to="PlinkoGame" method="_on_area_body_entered" binds= [75]]

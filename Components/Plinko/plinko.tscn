@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://bu31vxeyo0dyb"]
+[gd_scene load_steps=14 format=3 uid="uid://bu31vxeyo0dyb"]
 
+[ext_resource type="Texture2D" uid="uid://msf07vxauq3q" path="res://Assets/Images/Pineapple.png" id="2_1eues"]
 [ext_resource type="PackedScene" uid="uid://dvxcw5s1tmove" path="res://Components/Plinko/peg.tscn" id="2_l2p5j"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kek77"]
@@ -210,7 +211,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.7718
 surface_material_override/0 = SubResource("StandardMaterial3D_8bcq8")
 
 [node name="Peg34" parent="Pegs" instance=ExtResource("2_l2p5j")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.46095, 1, 0.219948)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.47614, 1, 0.219948)
 
 [node name="Peg35" parent="Pegs" instance=ExtResource("2_l2p5j")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.22371, 1, 0.22)
@@ -363,7 +364,7 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.7718
 surface_material_override/0 = SubResource("StandardMaterial3D_fx3qk")
 
 [node name="Peg34" parent="Pegs2" instance=ExtResource("2_l2p5j")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.46095, 1, 0.219948)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.47857, 1, 0.219948)
 
 [node name="Peg35" parent="Pegs2" instance=ExtResource("2_l2p5j")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.22371, 1, 0.22)
@@ -411,7 +412,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
 [node name="StaticBody3D" type="StaticBody3D" parent="Walls/MeshInstance3D3"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MeshInstance3D3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_1eues")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="Walls"]
@@ -422,7 +422,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
 [node name="StaticBody3D" type="StaticBody3D" parent="Walls/MeshInstance3D4"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MeshInstance3D4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_1eues")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="Walls"]
@@ -433,7 +432,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
 [node name="StaticBody3D" type="StaticBody3D" parent="Walls/MeshInstance3D5"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MeshInstance3D5/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_1eues")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="Walls"]
@@ -444,7 +442,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
 [node name="StaticBody3D" type="StaticBody3D" parent="Walls/MeshInstance3D6"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MeshInstance3D6/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_1eues")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="Walls"]
@@ -455,7 +452,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
 [node name="StaticBody3D" type="StaticBody3D" parent="Walls/MeshInstance3D7"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MeshInstance3D7/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_1eues")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="Walls"]
@@ -466,7 +462,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
 [node name="StaticBody3D" type="StaticBody3D" parent="Walls/MeshInstance3D8"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MeshInstance3D8/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_1eues")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="Walls"]
@@ -477,7 +472,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
 [node name="StaticBody3D" type="StaticBody3D" parent="Walls/MeshInstance3D9"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MeshInstance3D9/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_1eues")
 
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="Walls"]
@@ -488,7 +482,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_tvybc")
 [node name="StaticBody3D" type="StaticBody3D" parent="Walls/MeshInstance3D10"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls/MeshInstance3D10/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("ConcavePolygonShape3D_1eues")
 
 [node name="RightWall" type="MeshInstance3D" parent="Walls"]
@@ -536,3 +529,7 @@ text = "30"
 [node name="Label3D5" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.40013, 0.181657, 0.408685)
 text = "20"
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.594603, 1.50808, 0.132049)
+texture = ExtResource("2_1eues")
