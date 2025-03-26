@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgnqnrte4hyjk"]
+
+[ext_resource type="PackedScene" uid="uid://dt2h86tj3mlq5" path="res://Assets/Pirate-Assets/palm-detailed-bend.fbx" id="1_ext7u"]
+
+[node name="palm-detailed-bend" instance=ExtResource("1_ext7u")]
