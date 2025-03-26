@@ -3,7 +3,7 @@
 [ext_resource type="ArrayMesh" uid="uid://r2imjo7o2734" path="res://Assets/Shaders/grass/grass2.res" id="1_pj34f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1yneq"]
-albedo_color = Color(0, 0.338419, 9.62615e-08, 1)
+albedo_color = Color(0, 0.584314, 0.352941, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wyrdk"]
 material = SubResource("StandardMaterial3D_1yneq")

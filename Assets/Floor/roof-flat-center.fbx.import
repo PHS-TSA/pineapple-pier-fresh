@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://0jretychartb"
-path="res://.godot/imported/grass.fbx-f94e19f7ab67f57f332fdb041ef30f94.scn"
+uid="uid://bx5msjbspyrd8"
+path="res://.godot/imported/roof-flat-center.fbx-574f5a93d152a5363d4301725bf148f1.scn"
 
 [deps]
 
-source_file="res://Assets/Pirate-Assets/grass.fbx"
-dest_files=["res://.godot/imported/grass.fbx-f94e19f7ab67f57f332fdb041ef30f94.scn"]
+source_file="res://Assets/Floor/roof-flat-center.fbx"
+dest_files=["res://.godot/imported/roof-flat-center.fbx-574f5a93d152a5363d4301725bf148f1.scn"]
 
 [params]
 
