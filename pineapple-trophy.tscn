@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cb0ykjyo1xj5d"]
+
+[ext_resource type="PackedScene" uid="uid://rei3a4hkigu7" path="res://Assets/Trophy.fbx" id="1_yfr8h"]
+[ext_resource type="PackedScene" uid="uid://dj61r4tkp8lkm" path="res://Assets/Food-Assets/pineapple.fbx" id="2_4vw2j"]
+
+[node name="Trophy" instance=ExtResource("1_yfr8h")]
+
+[node name="pineapple" parent="Trophy" index="0" instance=ExtResource("2_4vw2j")]
+transform = Transform3D(0.03, 0, 0, 0, -1.31134e-09, -0.03, 0, 0.03, -1.31134e-09, 0, -5.16255e-11, 0.000216533)
