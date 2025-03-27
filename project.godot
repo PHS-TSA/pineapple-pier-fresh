@@ -28,6 +28,10 @@ window/vsync/vsync_mode=0
 
 enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
 
+[filesystem]
+
+import/blender/enabled=false
+
 [physics]
 
 common/physics_interpolation=true
