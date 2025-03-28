@@ -2,9 +2,17 @@ extends Node3D
 
 const BALLOON = preload("res://balloon2.tscn")
 
+'''
+How to finish this:
+implement button that spawns 4 balls
+everytime user presses it respawn the balls unless wonGame = true. Then reset dart board
+
+'''
+
 #This implementation is terrible but i want to go to bed
 var balloonsLeft
 var winningBalloon
+var playerWin = false
 
 func _ready():
 	#%Balloon.get_child(0).mesh.material.albedo_color = Color(255,255,00)
@@ -39,5 +47,10 @@ func _process(delta):
 		var winningBalloonNode = %Balloons2.get_node_or_null("Balloon" + str(winningBalloon))
 		if winningBalloonNode == null:
 			print("You popped the winning balloon!")
+			playerWin = true
+			%DartConfetti.emitting = true
+			%DartYay.play()
+			await get_tree().create_timer(0.5).timeout
+			%DartConfetti.emitting = false
 			# Add your win condition logic here
 	

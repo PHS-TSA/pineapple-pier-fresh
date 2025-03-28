@@ -12,6 +12,8 @@ func _ready():
 		if(self.get_child(i).scene_file_path == "res://milk_bottle.tscn"):
 				bottles.append(self.get_child(i).get_child(0))
 
+
+#TODO please optimize this brosif. you know gdscript now
 func _on_milk_button_button_pressed(button):
 	%MilkTimer.stop()
 	

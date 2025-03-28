@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=4 uid="uid://dkqfmagjsdm07"]
+[gd_scene load_steps=80 format=4 uid="uid://dkqfmagjsdm07"]
 
 [ext_resource type="Script" uid="uid://cohbke6ncegqs" path="res://Scripts/Game_Logic.gd" id="1_5vw27"]
 [ext_resource type="Script" uid="uid://bp5ix0qc0l30h" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="1_ig7tw"]
@@ -8,15 +8,18 @@
 [ext_resource type="PackedScene" uid="uid://dj61r4tkp8lkm" path="res://Assets/Food-Assets/pineapple.fbx" id="5_a6jrf"]
 [ext_resource type="Script" uid="uid://622k3d44ebei" path="res://Scripts/milk_bottle_game_logic.gd" id="5_kek77"]
 [ext_resource type="PackedScene" uid="uid://d348tu74h3moo" path="res://ball.tscn" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://bmlmb4wh86atg" path="res://dart_spawning.gd" id="7_4k2k6"]
+[ext_resource type="Script" uid="uid://c5hdetrxypaip" path="res://dart_board.gd" id="7_jq2sk"]
 [ext_resource type="AudioStream" uid="uid://cutypwo7e5q8h" path="res://Assets/Audio/YAY - Sound Effect.mp3" id="8_4c57u"]
+[ext_resource type="AudioStream" uid="uid://wmomxug3nmme" path="res://Assets/Audio/balloon-pop-48030.mp3" id="8_4k2k6"]
 [ext_resource type="PackedScene" uid="uid://cme66uldrjl2i" path="res://addons/godot-xr-tools/interactables/interactable_area_button.tscn" id="8_kek77"]
+[ext_resource type="Texture2D" uid="uid://msf07vxauq3q" path="res://Assets/Images/Pineapple.png" id="9_0rl1p"]
 [ext_resource type="PackedScene" uid="uid://dsoxd16bwjk1y" path="res://Assets/Shaders/water.tscn" id="11_efxa6"]
 [ext_resource type="PackedScene" uid="uid://dr1qgnhde7emj" path="res://Assets/Pirate-Assets/ship-small.fbx" id="12_dg77c"]
 [ext_resource type="PackedScene" uid="uid://dkgit5wtto8cn" path="res://pier-platform.tscn" id="13_w48qg"]
 [ext_resource type="PackedScene" uid="uid://caa86i2blac1j" path="res://Assets/Pirate-Assets/crate.fbx" id="15_vivmo"]
 [ext_resource type="Script" uid="uid://oyf8qk2ufjbd" path="res://hot-dog-logic.gd" id="15_yaehf"]
 [ext_resource type="PackedScene" uid="uid://bu31vxeyo0dyb" path="res://Components/Plinko/plinko.tscn" id="16_2cqfq"]
-[ext_resource type="PackedScene" uid="uid://bxv041l0h78jv" path="res://dart_board.tscn" id="16_seu75"]
 [ext_resource type="Texture2D" uid="uid://dj1hdtlosf23i" path="res://Assets/Pirate-Assets/Textures/colormap.png" id="16_yaehf"]
 [ext_resource type="AudioStream" uid="uid://d3ldr1m4ibhpl" path="res://Assets/Audio/StartBell.mp3" id="17_yaehf"]
 [ext_resource type="AudioStream" uid="uid://ckraq64v7h5pa" path="res://Assets/Audio/Hotdog.mp3" id="18_074og"]
@@ -44,6 +47,50 @@ size = Vector2(10, 10)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_h2yge"]
 points = PackedVector3Array(-5, 0, -5, -5, 0, 5, 5, 0, -5, 5, 0, 5)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7f0ok"]
+top_radius = 0.05
+bottom_radius = 0.05
+height = 1.4
+radial_segments = 8
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cxops"]
+albedo_color = Color(0.302591, 0.161532, 0.0290597, 1)
+metallic = 0.59
+roughness = 0.41
+uv1_scale = Vector3(1, 4, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0273w"]
+size = Vector3(0.4, 0.04, 0.3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vivmo"]
+albedo_color = Color(0.301961, 0.160784, 0.027451, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0tokh"]
+size = Vector3(0.4, 0.04, 0.3)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_62pep"]
+radius = 0.15
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_wjqor"]
+top_radius = 0.075
+bottom_radius = 0.1
+height = 0.05
+radial_segments = 16
+rings = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lql4b"]
+albedo_color = Color(0.760784, 0.164706, 0.0823529, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7qgt"]
+albedo_color = Color(0.606885, 0.345816, 0.0979771, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m8xb8"]
+material = SubResource("StandardMaterial3D_h7qgt")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_46nvu"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="Gradient" id="Gradient_sudau"]
 offsets = PackedFloat32Array(0, 0.472313, 0.775244, 0.996743, 1)
@@ -86,41 +133,6 @@ material = SubResource("StandardMaterial3D_ovyj8")
 shape = 0
 size = 0.3
 sections = 4
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_7f0ok"]
-top_radius = 0.05
-bottom_radius = 0.05
-height = 1.4
-radial_segments = 8
-rings = 1
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cxops"]
-albedo_color = Color(0.302591, 0.161532, 0.0290597, 1)
-metallic = 0.59
-roughness = 0.41
-uv1_scale = Vector3(1, 4, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_0273w"]
-size = Vector3(0.4, 0.04, 0.3)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vivmo"]
-albedo_color = Color(0.301961, 0.160784, 0.027451, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_0tokh"]
-size = Vector3(0.4, 0.04, 0.3)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_62pep"]
-radius = 0.15
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_wjqor"]
-top_radius = 0.075
-bottom_radius = 0.1
-height = 0.05
-radial_segments = 16
-rings = 1
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lql4b"]
-albedo_color = Color(0.760784, 0.164706, 0.0823529, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kek77"]
 size = Vector3(1, 0.927002, 0.134277)
@@ -464,20 +476,231 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane"]
 shape = SubResource("ConvexPolygonShape3D_h2yge")
 
-[node name="BallStand3" parent="." instance=ExtResource("15_vivmo")]
+[node name="DartGame" type="Node3D" parent="."]
+script = ExtResource("7_4k2k6")
+
+[node name="DartGameButton" type="Node3D" parent="DartGame"]
+transform = Transform3D(-0.000401469, 0, 1, 0, 1, 0, -1, 0, -0.000401469, -1.72259, -0.322334, -15.2857)
+
+[node name="Pole" type="MeshInstance3D" parent="DartGame/DartGameButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, -0.75)
+mesh = SubResource("CylinderMesh_7f0ok")
+surface_material_override/0 = SubResource("StandardMaterial3D_cxops")
+
+[node name="Table" type="StaticBody3D" parent="DartGame/DartGameButton/Pole"]
+transform = Transform3D(1, 0, 0, 0, 0.929358, -0.369179, 0, 0.369179, 0.929358, 0, 0.702817, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="DartGame/DartGameButton/Pole/Table"]
+mesh = SubResource("BoxMesh_0273w")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_vivmo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DartGame/DartGameButton/Pole/Table"]
+shape = SubResource("BoxShape3D_0tokh")
+
+[node name="DartButton" parent="DartGame/DartGameButton/Pole" instance=ExtResource("8_kek77")]
+transform = Transform3D(1, 0, 0, 0, 0.929358, -0.369179, 0, 0.369179, 0.929358, 0, 0.702817, 0)
+button = NodePath("Button")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DartGame/DartGameButton/Pole/DartButton"]
+shape = SubResource("SphereShape3D_62pep")
+
+[node name="Button" type="MeshInstance3D" parent="DartGame/DartGameButton/Pole/DartButton"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0436053, -1.19209e-07)
+mesh = SubResource("CylinderMesh_wjqor")
+skeleton = NodePath("../../Table/Mesh")
+surface_material_override/0 = SubResource("StandardMaterial3D_lql4b")
+
+[node name="DartBoard" type="Node3D" parent="DartGame"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.09577, 1.2657, -13.99)
+script = ExtResource("7_jq2sk")
+
+[node name="Board" type="MeshInstance3D" parent="DartGame/DartBoard"]
+transform = Transform3D(1.79578, 0, 0, 0, 1.74485, 0, 0, 0, 0.30364, 0, 0, 0)
+mesh = SubResource("BoxMesh_m8xb8")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DartGame/DartBoard/Board"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DartGame/DartBoard/Board/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_46nvu")
+
+[node name="BalloonMarkers" type="Node3D" parent="DartGame/DartBoard"]
+unique_name_in_owner = true
+
+[node name="BalloonMarker1" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.65, 0.302)
+
+[node name="BalloonMarker2" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.65, 0.302)
+
+[node name="BalloonMarker3" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0.65, 0.302)
+
+[node name="BalloonMarker4" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0.65, 0.302)
+
+[node name="BalloonMarker5" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0.65, 0.302)
+
+[node name="BalloonMarker6" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.65, 0.302)
+
+[node name="BalloonMarker7" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.35, 0.302)
+
+[node name="BalloonMarker8" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.35, 0.302)
+
+[node name="BalloonMarker9" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0.35, 0.302)
+
+[node name="BalloonMarker10" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0.35, 0.302)
+
+[node name="BalloonMarker11" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0.35, 0.302)
+
+[node name="BalloonMarker12" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.35, 0.302)
+
+[node name="BalloonMarker13" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.05, 0.302)
+
+[node name="BalloonMarker14" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.05, 0.302)
+
+[node name="BalloonMarker15" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0.05, 0.302)
+
+[node name="BalloonMarker16" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0.05, 0.302)
+
+[node name="BalloonMarker17" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0.05, 0.302)
+
+[node name="BalloonMarker18" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.05, 0.302)
+
+[node name="BalloonMarker19" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.25, 0.302)
+
+[node name="BalloonMarker20" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, -0.25, 0.302)
+
+[node name="BalloonMarker21" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, -0.25, 0.302)
+
+[node name="BalloonMarker22" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, -0.25, 0.302)
+
+[node name="BalloonMarker23" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, -0.25, 0.302)
+
+[node name="BalloonMarker24" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, -0.25, 0.302)
+
+[node name="BalloonMarker25" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.55, 0.302)
+
+[node name="BalloonMarker26" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, -0.55, 0.302)
+
+[node name="BalloonMarker27" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, -0.55, 0.302)
+
+[node name="BalloonMarker28" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, -0.55, 0.302)
+
+[node name="BalloonMarker29" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, -0.55, 0.302)
+
+[node name="BalloonMarker30" type="Marker3D" parent="DartGame/DartBoard/BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, -0.55, 0.302)
+
+[node name="Balloons2" type="Node3D" parent="DartGame/DartBoard"]
+unique_name_in_owner = true
+
+[node name="PopSound" type="AudioStreamPlayer3D" parent="DartGame/DartBoard"]
+unique_name_in_owner = true
+stream = ExtResource("8_4k2k6")
+volume_db = 38.621
+
+[node name="WinningPineappleSprite" type="Sprite3D" parent="DartGame/DartBoard"]
+unique_name_in_owner = true
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.141701, 0.0279882, 0.162623)
+texture = ExtResource("9_0rl1p")
+
+[node name="DartStand" parent="DartGame" instance=ExtResource("15_vivmo")]
 transform = Transform3D(-0.585, 1.88745e-07, 5.56364e-08, -8.83325e-08, -1.25, 1.50488e-20, 3.25473e-08, -1.05011e-14, 1, -2.58649, 0.964669, -14.0021)
 
-[node name="Ball1Marker2" type="Marker3D" parent="."]
+[node name="Darts" type="Node3D" parent="DartGame"]
 unique_name_in_owner = true
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.74413, 1.06012, -14.2208)
 
-[node name="Ball2Marker2" type="Marker3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.74413, 1.06012, -13.997)
+[node name="Ball" parent="DartGame/Darts" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42478, 1.06012, -14.5619)
 
-[node name="Ball3Marker2" type="Marker3D" parent="."]
+[node name="Ball2" parent="DartGame/Darts" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42478, 1.06012, -14.3381)
+
+[node name="Ball3" parent="DartGame/Darts" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42478, 1.06012, -14.1046)
+
+[node name="Ball4" parent="DartGame/Darts" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42478, 1.06012, -13.8753)
+
+[node name="Ball5" parent="DartGame/Darts" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42478, 1.06012, -13.6739)
+
+[node name="Ball6" parent="DartGame/Darts" instance=ExtResource("6_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42478, 1.06012, -13.4826)
+
+[node name="DartMarkers" type="Node3D" parent="DartGame"]
 unique_name_in_owner = true
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.74413, 1.06012, -13.7635)
+
+[node name="Dart1Marker" type="Marker3D" parent="DartGame/DartMarkers"]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.42478, 1.06012, -14.5619)
+
+[node name="Dart2Marker" type="Marker3D" parent="DartGame/DartMarkers"]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.42478, 1.06012, -14.3381)
+
+[node name="Dart3Marker" type="Marker3D" parent="DartGame/DartMarkers"]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.42478, 1.06012, -14.1046)
+
+[node name="Dart4Marker" type="Marker3D" parent="DartGame/DartMarkers"]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.42478, 1.06012, -13.8753)
+
+[node name="Dart5Marker" type="Marker3D" parent="DartGame/DartMarkers"]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.42478, 1.06012, -13.6739)
+
+[node name="Dart6Marker" type="Marker3D" parent="DartGame/DartMarkers"]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.42478, 1.06012, -13.4826)
+
+[node name="Confetti" type="Node3D" parent="DartGame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08114, 0.377261, -14.0499)
+
+[node name="DartConfetti" type="GPUParticles3D" parent="DartGame/Confetti"]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, -0.705352, 0)
+emitting = false
+amount = 64
+lifetime = 3.0
+explosiveness = 1.0
+trail_enabled = true
+trail_lifetime = 0.2
+process_material = SubResource("ParticleProcessMaterial_smimb")
+draw_pass_1 = SubResource("RibbonTrailMesh_sf15k")
+
+[node name="DartYay" type="AudioStreamPlayer3D" parent="DartGame/Confetti"]
+unique_name_in_owner = true
+stream = ExtResource("8_4c57u")
+volume_db = 14.187
 
 [node name="MilkBottleGame" type="Node3D" parent="."]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 2.11964, 0, -9.65625)
@@ -621,9 +844,6 @@ transform = Transform3D(2, 0, 0, 0, 0.998, 0, 0, 0, 2, 0, -0.369, 0)
 
 [node name="ship-small" parent="." instance=ExtResource("12_dg77c")]
 transform = Transform3D(0.688917, 0, -0.296467, 0, 0.75, 0, 0.296467, 0, 0.688917, -23.4091, -0.642539, -23.0388)
-
-[node name="DartBoard" parent="." instance=ExtResource("16_seu75")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.09577, 1.2657, -13.99)
 
 [node name="HotDogContest" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4068, 0.994516, -8.593)
@@ -1244,8 +1464,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.07972, -1.90735e-06, 52.54
 transform = Transform3D(-4.94511e-08, 1.31134e-07, -1, -9.89022e-08, -1.5, -8.74228e-08, -0.655, 2.26494e-07, 7.54979e-08, -0.0973685, 1.01188, -16.9534)
 
 [node name="PineappleTrophy" parent="." instance=ExtResource("31_seu75")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.247017, 1.31214, -16.8784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0332983, 1.31214, -16.8784)
 
+[connection signal="button_pressed" from="DartGame/DartGameButton/Pole/DartButton" to="DartGame" method="_on_dart_button_button_pressed"]
 [connection signal="button_pressed" from="MilkBottleGame/MilkGameButton/Pole/MilkButton" to="MilkBottleGame/MilkBottleObjectContainer" method="_on_milk_button_button_pressed"]
 [connection signal="body_entered" from="MilkBottleGame/MilkArea" to="MilkBottleGame/MilkBottleObjectContainer" method="_on_milk_area_body_entered"]
 [connection signal="button_pressed" from="HotDogContest/HotDogGameButton/Pole/HotDogButton" to="HotDogContest" method="_on_hot_dog_button_button_pressed"]
