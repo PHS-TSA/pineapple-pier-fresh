@@ -2,6 +2,8 @@ extends Node3D
 
 const MILKBALL = preload("res://ball.tscn")
 const MILKBOTTLE = preload("res://milk_bottle.tscn")
+const TROPHY = preload("res://pineapple-trophy-pickable.tscn")
+
 
 var bottles: Array[RigidBody3D]
 #TODO
@@ -78,7 +80,19 @@ func _on_milk_area_body_entered(body):
 			%MilkYay.play()
 			await get_tree().create_timer(0.5).timeout
 			%MilkConfetti.emitting = false
-
+			
+			var material = %MilkButtonMesh.get_surface_override_material(0).duplicate()
+			if(material.albedo_color != Color(0,255,0)):
+				Global.gamesWon +=1
+				if(Global.gamesWon == 4 and not Global.trophySpawned):
+					print("all games completed spawning trophy")
+					var trophy = TROPHY.instantiate()
+					trophy.position = %TrophyMarker.position
+					self.get_tree().root.add_child(trophy)
+					Global.trophySpawned = false
+			material.albedo_color = Color(0,255,0)
+			%MilkButtonMesh.set_surface_override_material(0, material)
+			
 			break
 		await get_tree().create_timer(0.1).timeout
 

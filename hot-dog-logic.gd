@@ -2,6 +2,8 @@ extends Node3D
 
 var buttonPress:bool = false
 const HOTDOG = preload("res://hotdog.tscn")
+const TROPHY = preload("res://pineapple-trophy-pickable.tscn")
+
 var played = false
 var playerWin:bool
 
@@ -30,6 +32,21 @@ func _process(delta):
 			%HotDogConfetti.emitting = false
 			
 			%HotDogTimerLabel.text = "You Win!"
+			
+			#Green button
+			
+			var material = %HotDogButtonMesh.get_surface_override_material(0).duplicate()
+			if(material.albedo_color != Color(0,255,0)):
+				Global.gamesWon +=1
+				if(Global.gamesWon == 4 and not Global.trophySpawned):
+					print("all games completed spawning trophy")
+					var trophy = TROPHY.instantiate()
+					trophy.position = %TrophyMarker.position
+					self.get_tree().root.add_child(trophy)
+					Global.trophySpawned = false
+			material.albedo_color = Color(0,255,0)
+			%HotDogButtonMesh.set_surface_override_material(0, material)
+			
 	elif(not played):
 		
 		%HotDogTimerLabel.text = "Start 

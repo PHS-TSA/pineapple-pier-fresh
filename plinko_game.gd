@@ -1,6 +1,7 @@
 extends Node3D
 
 const BALL = preload("res://plinko-ball.tscn")
+const TROPHY = preload("res://pineapple-trophy-pickable.tscn")
 var spawners
 var ballsLeft = 10
 var ballEntered = 0
@@ -55,6 +56,18 @@ func _on_area_body_entered(body, value):
 		%PlinkoConfetti.emitting = false
 		await get_tree().create_timer(4).timeout
 		pauseOver = true
+		
+		var material = %PlinkoButtonMesh.get_surface_override_material(0).duplicate()
+		if(material.albedo_color != Color(0,255,0)):
+				Global.gamesWon +=1
+				if(Global.gamesWon == 4 and not Global.trophySpawned):
+					print("all games completed spawning trophy")
+					var trophy = TROPHY.instantiate()
+					trophy.position = %TrophyMarker.position
+					self.get_tree().root.add_child(trophy)
+					Global.trophySpawned = false
+		material.albedo_color = Color(0,255,0)
+		%PlinkoButtonMesh.set_surface_override_material(0, material)
 	
 	#Losing Logic
 	elif(ballsLeft == 0 and ballEntered == 10):
