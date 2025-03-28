@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=4 uid="uid://dkqfmagjsdm07"]
+[gd_scene load_steps=80 format=4 uid="uid://dkqfmagjsdm07"]
 
 [ext_resource type="Script" uid="uid://cohbke6ncegqs" path="res://Scripts/Game_Logic.gd" id="1_5vw27"]
 [ext_resource type="Script" uid="uid://bp5ix0qc0l30h" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="1_ig7tw"]
@@ -234,6 +234,9 @@ size = Vector2(10, 10)
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_h2yge"]
 points = PackedVector3Array(-5, 0, -5, -5, 0, 5, 5, 0, -5, 5, 0, 5)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_jq2sk"]
+size = Vector3(22.5366, 0.824799, 36.6095)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qsp4k"]
 albedo_color = Color(0, 0.584314, 0.352941, 1)
 
@@ -307,6 +310,7 @@ script = ExtResource("1_ig7tw")
 metadata/_custom_type_script = "uid://bp5ix0qc0l30h"
 
 [node name="XROrigin3D" parent="." instance=ExtResource("2_0xm2m")]
+unique_name_in_owner = true
 
 [node name="Planks" type="Node3D" parent="."]
 
@@ -861,12 +865,6 @@ collision_mask = 3
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MilkBottleGame/MilkBottleGameStructure/structure-roof/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_yaehf")
 
-[node name="Water" parent="." instance=ExtResource("11_efxa6")]
-transform = Transform3D(2, 0, 0, 0, 0.998, 0, 0, 0, 2, 0, -0.369, 0)
-
-[node name="ship-small" parent="." instance=ExtResource("12_dg77c")]
-transform = Transform3D(0.688917, 0, -0.296467, 0, 0.75, 0, 0.296467, 0, 0.688917, -23.4091, -0.642539, -23.0388)
-
 [node name="HotDogContest" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.4068, 0.994516, -8.593)
 script = ExtResource("15_yaehf")
@@ -1365,13 +1363,28 @@ transform = Transform3D(0.590521, 0, -0.807022, 0, 1, 0, 0.807022, 0, 0.590521, 
 [node name="StartPath" parent="StartArea" instance=ExtResource("23_1u8w0")]
 transform = Transform3D(1.83705, 0, 0, 0, 1, 0, 0, 0, 10.9432, 0.0251724, -0.0920876, 0.529905)
 
-[node name="ship-ocean-liner" parent="." instance=ExtResource("23_d13ii")]
+[node name="Ocean" type="Node3D" parent="."]
+
+[node name="Water" parent="Ocean" instance=ExtResource("11_efxa6")]
+transform = Transform3D(2, 0, 0, 0, 0.998, 0, 0, 0, 2, 0, -0.369, 0)
+skeleton = NodePath("../..")
+
+[node name="Area3D" type="Area3D" parent="Ocean/Water"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ocean/Water/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.256391, -0.229855, 1.57568)
+shape = SubResource("BoxShape3D_jq2sk")
+
+[node name="ship-small" parent="Ocean" instance=ExtResource("12_dg77c")]
+transform = Transform3D(0.688917, 0, -0.296467, 0, 0.75, 0, 0.296467, 0, 0.688917, -23.4091, -0.642539, -23.0388)
+
+[node name="ship-ocean-liner" parent="Ocean" instance=ExtResource("23_d13ii")]
 transform = Transform3D(0.801076, 0, 0.598562, 0, 1, 0, -0.598562, 0, 0.801076, 20.4279, -0.0952599, -32.8558)
 
-[node name="ship-pirate-medium" parent="." instance=ExtResource("26_lswn8")]
+[node name="ship-pirate-medium" parent="Ocean" instance=ExtResource("26_lswn8")]
 transform = Transform3D(0.197475, 0, 0.671568, 0, 0.7, 0, -0.671568, 0, 0.197475, -22.6331, 0, 16.315)
 
-[node name="ship-ocean-liner-small" parent="." instance=ExtResource("27_a6jrf")]
+[node name="ship-ocean-liner-small" parent="Ocean" instance=ExtResource("27_a6jrf")]
 transform = Transform3D(-0.66821, 0, 0.602906, 0, 0.9, 0, -0.602906, 0, -0.66821, 28.3757, -0.696591, 24.8856)
 
 [node name="OutsideArea" type="Node3D" parent="."]
@@ -1477,6 +1490,10 @@ skeleton = NodePath("../../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="OutsideArea/OutSideGrass8"]
 shape = SubResource("ConvexPolygonShape3D_h2yge")
 
+[node name="palm-detailed-bend5" parent="OutsideArea" instance=ExtResource("25_0odxb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.07972, -1.90735e-06, 52.5439)
+visible = false
+
 [node name="FancyGrass" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 55.2196, 0.29806, 0)
 visible = false
@@ -1493,21 +1510,21 @@ multimesh = SubResource("MultiMesh_jq2sk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0901728, -0.00856775, 0.0166185)
 shape = SubResource("BoxShape3D_4lhtb")
 
-[node name="palm-detailed-bend5" parent="." instance=ExtResource("25_0odxb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.07972, -1.90735e-06, 52.5439)
-
-[node name="crate" parent="." instance=ExtResource("29_qsp4k")]
+[node name="TrophyStand" parent="." instance=ExtResource("29_qsp4k")]
 transform = Transform3D(-4.94511e-08, 1.31134e-07, -1, -9.89022e-08, -1.5, -8.74228e-08, -0.655, 2.26494e-07, 7.54979e-08, -0.0973685, 1.01188, -16.9534)
 
 [node name="TrophyMarker" type="Marker3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0439487, 1.31214, -16.8784)
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="Music" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("33_jq2sk")
 attenuation_model = 3
 volume_db = -5.0
 autoplay = true
+
+[node name="Spawn" type="Marker3D" parent="."]
+unique_name_in_owner = true
 
 [connection signal="button_pressed" from="DartGame/DartGameButton/Pole/DartButton" to="DartGame/DartBoard" method="_on_dart_button_button_pressed"]
 [connection signal="button_pressed" from="MilkBottleGame/MilkGameButton/Pole/MilkButton" to="MilkBottleGame/MilkBottleObjectContainer" method="_on_milk_button_button_pressed"]
@@ -1523,3 +1540,4 @@ autoplay = true
 [connection signal="body_entered" from="PlinkoGame/PlinkoScanners/30Area2" to="PlinkoGame" method="_on_area_body_entered" binds= [30]]
 [connection signal="body_entered" from="PlinkoGame/PlinkoScanners/20Area2" to="PlinkoGame" method="_on_area_body_entered" binds= [20]]
 [connection signal="body_entered" from="PlinkoGame/PlinkoScanners/75Area" to="PlinkoGame" method="_on_area_body_entered" binds= [75]]
+[connection signal="body_entered" from="Ocean/Water/Area3D" to="." method="_on_area_3d_body_entered"]
