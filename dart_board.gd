@@ -4,19 +4,25 @@ const BALLOON = preload("res://balloon2.tscn")
 
 #This implementation is terrible but i want to go to bed
 var balloonsLeft
+var winningBalloon
 
 func _ready():
 	#%Balloon.get_child(0).mesh.material.albedo_color = Color(255,255,00)
+	var i = 0
 	for child in %BalloonMarkers.get_children():
 		var balloon = BALLOON.instantiate()
 		balloon.position = child.position
 		balloon.rotate_x(90)
+		balloon.name = ("Balloon"+ str(i))
 		%Balloons2.add_child(balloon)
-	
+		i+=1
+	winningBalloon = randi_range(0,len(%BalloonMarkers.get_children())-1)
+	%WinningPineappleSprite.position = %BalloonMarkers.get_children()[winningBalloon].position
 	balloonsLeft = len(%Balloons2.get_children())
 	
 	for child in %Balloons2.get_children():	
-		print(child.get_child(0))
+		
+		print(child.name)
 		var material = child.get_child(0).get_surface_override_material(0).duplicate()
 		var r = randi_range(0,255) / 255.0
 		var g = randi_range(0,255) / 255.0
@@ -30,4 +36,8 @@ func _process(delta):
 	if(len(%Balloons2.get_children()) < balloonsLeft):
 		%PopSound.play()
 		balloonsLeft = len(%Balloons2.get_children())
+		var winningBalloonNode = %Balloons2.get_node_or_null("Balloon" + str(winningBalloon))
+		if winningBalloonNode == null:
+			print("You popped the winning balloon!")
+			# Add your win condition logic here
 	
