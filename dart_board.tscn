@@ -1,0 +1,121 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxv041l0h78jv"]
+
+[ext_resource type="Script" uid="uid://c5hdetrxypaip" path="res://dart_board.gd" id="1_46nvu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7qgt"]
+albedo_color = Color(0.606885, 0.345816, 0.0979771, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m8xb8"]
+material = SubResource("StandardMaterial3D_h7qgt")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_46nvu"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="DartBoard" type="Node3D"]
+script = ExtResource("1_46nvu")
+
+[node name="Board" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.79578, 0, 0, 0, 1.74485, 0, 0, 0, 0.30364, 0, 0, 0)
+mesh = SubResource("BoxMesh_m8xb8")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Board"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Board/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_46nvu")
+
+[node name="BalloonMarkers" type="Node3D" parent="."]
+unique_name_in_owner = true
+
+[node name="BalloonMarker1" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.65, 0.302)
+
+[node name="BalloonMarker2" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.65, 0.302)
+
+[node name="BalloonMarker3" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0.65, 0.302)
+
+[node name="BalloonMarker4" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0.65, 0.302)
+
+[node name="BalloonMarker5" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0.65, 0.302)
+
+[node name="BalloonMarker6" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.65, 0.302)
+
+[node name="BalloonMarker7" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.35, 0.302)
+
+[node name="BalloonMarker8" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.35, 0.302)
+
+[node name="BalloonMarker9" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0.35, 0.302)
+
+[node name="BalloonMarker10" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0.35, 0.302)
+
+[node name="BalloonMarker11" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0.35, 0.302)
+
+[node name="BalloonMarker12" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.35, 0.302)
+
+[node name="BalloonMarker13" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 0.05, 0.302)
+
+[node name="BalloonMarker14" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, 0.05, 0.302)
+
+[node name="BalloonMarker15" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 0.05, 0.302)
+
+[node name="BalloonMarker16" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0.05, 0.302)
+
+[node name="BalloonMarker17" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, 0.05, 0.302)
+
+[node name="BalloonMarker18" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0.05, 0.302)
+
+[node name="BalloonMarker19" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.25, 0.302)
+
+[node name="BalloonMarker20" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, -0.25, 0.302)
+
+[node name="BalloonMarker21" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, -0.25, 0.302)
+
+[node name="BalloonMarker22" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, -0.25, 0.302)
+
+[node name="BalloonMarker23" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, -0.25, 0.302)
+
+[node name="BalloonMarker24" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, -0.25, 0.302)
+
+[node name="BalloonMarker25" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, -0.55, 0.302)
+
+[node name="BalloonMarker26" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45, -0.55, 0.302)
+
+[node name="BalloonMarker27" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, -0.55, 0.302)
+
+[node name="BalloonMarker28" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, -0.55, 0.302)
+
+[node name="BalloonMarker29" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45, -0.55, 0.302)
+
+[node name="BalloonMarker30" type="Marker3D" parent="BalloonMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, -0.55, 0.302)
+
+[node name="Balloons2" type="Node3D" parent="."]
+unique_name_in_owner = true

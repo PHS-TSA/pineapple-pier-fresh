@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbp28l0o5aese"]
+
+[ext_resource type="PackedScene" uid="uid://b6ascbrvd623n" path="res://Assets/Balloon/Balloon.FBX" id="1_n2rxu"]
+
+[node name="Balloon" instance=ExtResource("1_n2rxu")]
+
+[node name="Balloon" parent="." index="0"]
+transform = Transform3D(0.04, 0, 0, 0, -1.74846e-09, 0.04, 0, -0.04, -1.74846e-09, 0, 0, 6.05583e-09)
