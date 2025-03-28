@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxv041l0h78jv"]
+[gd_scene load_steps=6 format=3 uid="uid://bxv041l0h78jv"]
 
 [ext_resource type="Script" uid="uid://c5hdetrxypaip" path="res://dart_board.gd" id="1_46nvu"]
+[ext_resource type="AudioStream" uid="uid://wmomxug3nmme" path="res://Assets/Audio/balloon-pop-48030.mp3" id="2_46nvu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h7qgt"]
 albedo_color = Color(0.606885, 0.345816, 0.0979771, 1)
@@ -119,3 +120,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, -0.55, 0.302)
 
 [node name="Balloons2" type="Node3D" parent="."]
 unique_name_in_owner = true
+
+[node name="PopSound" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("2_46nvu")
+volume_db = 38.621
