@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=4 uid="uid://dkqfmagjsdm07"]
+[gd_scene load_steps=83 format=4 uid="uid://dkqfmagjsdm07"]
 
 [ext_resource type="Script" uid="uid://cohbke6ncegqs" path="res://Scripts/Game_Logic.gd" id="1_5vw27"]
 [ext_resource type="Script" uid="uid://bp5ix0qc0l30h" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="1_ig7tw"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://dj1hdtlosf23i" path="res://Assets/Pirate-Assets/Textures/colormap.png" id="16_yaehf"]
 [ext_resource type="AudioStream" uid="uid://d3ldr1m4ibhpl" path="res://Assets/Audio/StartBell.mp3" id="17_yaehf"]
 [ext_resource type="AudioStream" uid="uid://ckraq64v7h5pa" path="res://Assets/Audio/Hotdog.mp3" id="18_074og"]
+[ext_resource type="PackedScene" uid="uid://bm0nasgiei0e0" path="res://dart.tscn" id="19_0cp0l"]
 [ext_resource type="PackedScene" uid="uid://dd8t0rgu5btbs" path="res://fancy_sky_shader.tscn" id="21_ryguw"]
 [ext_resource type="Script" uid="uid://80ox4eevypof" path="res://plinko_game.gd" id="22_d13ii"]
 [ext_resource type="PackedScene" uid="uid://bx5msjbspyrd8" path="res://Assets/Floor/roof-flat-center.fbx" id="23_1u8w0"]
@@ -644,50 +645,50 @@ transform = Transform3D(-0.585, 1.88745e-07, 5.56364e-08, -8.83325e-08, -1.25, 1
 [node name="Darts" type="Node3D" parent="DartGame"]
 unique_name_in_owner = true
 
-[node name="Ball" parent="DartGame/Darts" instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42478, 1.06012, -14.5619)
+[node name="Dart" parent="DartGame/Darts" instance=ExtResource("19_0cp0l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.52384, 1.16302, -14.5619)
 
-[node name="Ball2" parent="DartGame/Darts" instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42478, 1.06012, -14.3381)
+[node name="Dart2" parent="DartGame/Darts" instance=ExtResource("19_0cp0l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.52384, 1.16302, -14.3397)
 
-[node name="Ball3" parent="DartGame/Darts" instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42478, 1.06012, -14.1046)
+[node name="Dart3" parent="DartGame/Darts" instance=ExtResource("19_0cp0l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.52384, 1.16302, -14.1005)
 
-[node name="Ball4" parent="DartGame/Darts" instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42478, 1.06012, -13.8753)
+[node name="Dart4" parent="DartGame/Darts" instance=ExtResource("19_0cp0l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.52384, 1.16302, -13.8718)
 
-[node name="Ball5" parent="DartGame/Darts" instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42478, 1.06012, -13.6739)
+[node name="Dart5" parent="DartGame/Darts" instance=ExtResource("19_0cp0l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.52384, 1.16302, -13.6732)
 
-[node name="Ball6" parent="DartGame/Darts" instance=ExtResource("6_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42478, 1.06012, -13.4826)
+[node name="Dart6" parent="DartGame/Darts" instance=ExtResource("19_0cp0l")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.52384, 1.16302, -13.4777)
 
 [node name="DartMarkers" type="Node3D" parent="DartGame"]
 unique_name_in_owner = true
 
 [node name="Dart1Marker" type="Marker3D" parent="DartGame/DartMarkers"]
 unique_name_in_owner = true
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.42478, 1.06012, -14.5619)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.53679, 1.16333, -14.5619)
 
 [node name="Dart2Marker" type="Marker3D" parent="DartGame/DartMarkers"]
 unique_name_in_owner = true
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.42478, 1.06012, -14.3381)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.53679, 1.16333, -14.3381)
 
 [node name="Dart3Marker" type="Marker3D" parent="DartGame/DartMarkers"]
 unique_name_in_owner = true
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.42478, 1.06012, -14.1046)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.53679, 1.16333, -14.1046)
 
 [node name="Dart4Marker" type="Marker3D" parent="DartGame/DartMarkers"]
 unique_name_in_owner = true
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.42478, 1.06012, -13.8753)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.53679, 1.16333, -13.8753)
 
 [node name="Dart5Marker" type="Marker3D" parent="DartGame/DartMarkers"]
 unique_name_in_owner = true
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.42478, 1.06012, -13.6739)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.53679, 1.16333, -13.6739)
 
 [node name="Dart6Marker" type="Marker3D" parent="DartGame/DartMarkers"]
 unique_name_in_owner = true
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.42478, 1.06012, -13.4826)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.53679, 1.16333, -13.4826)
 
 [node name="Confetti" type="Node3D" parent="DartGame"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08114, 0.377261, -14.0499)

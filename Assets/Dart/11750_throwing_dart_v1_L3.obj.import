@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bapswh4ddmlxy"
-path="res://.godot/imported/throwing_dart.dae-1713948d62dd29c48c70be16e43a369c.scn"
+uid="uid://bmknn0wkk5myg"
+path="res://.godot/imported/11750_throwing_dart_v1_L3.obj-5999b927023c4130d2b9ce4dceb8101f.scn"
 
 [deps]
 
-source_file="res://Assets/Dart/throwing_dart.dae"
-dest_files=["res://.godot/imported/throwing_dart.dae-1713948d62dd29c48c70be16e43a369c.scn"]
+source_file="res://Assets/Dart/11750_throwing_dart_v1_L3.obj"
+dest_files=["res://.godot/imported/11750_throwing_dart_v1_L3.obj-5999b927023c4130d2b9ce4dceb8101f.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=0.025
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
@@ -32,4 +32,11 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Mesh": {
+"generate/physics": true,
+"physics/body_type": 1
+}
+}
+}

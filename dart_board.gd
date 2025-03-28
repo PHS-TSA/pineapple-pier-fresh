@@ -1,7 +1,7 @@
 extends Node3D
 
 const BALLOON = preload("res://balloon2.tscn")
-const DART = preload("res://ball.tscn")
+const DART = preload("res://dart.tscn")
 const TROPHY = preload("res://pineapple-trophy-pickable.tscn")
 
 
@@ -66,6 +66,7 @@ func _on_dart_button_button_pressed(button):
 	for child in %DartMarkers.get_children():
 		var dart = DART.instantiate()
 		dart.position = child.position
+		dart.rotate_y(PI/2)
 		%Darts.add_child(dart)
 
 func _process(delta):

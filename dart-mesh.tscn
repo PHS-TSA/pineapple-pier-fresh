@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://btbxery77pjnn"]
+
+[ext_resource type="PackedScene" uid="uid://bmknn0wkk5myg" path="res://Assets/Dart/11750_throwing_dart_v1_L3.obj" id="1_aueae"]
+
+[node name="11750_throwing_dart_v1_L3" instance=ExtResource("1_aueae")]
