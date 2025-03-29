@@ -1,0 +1,73 @@
+[gd_scene load_steps=13 format=3 uid="uid://dgdaycobg8eey"]
+
+[ext_resource type="Script" uid="uid://bp5ix0qc0l30h" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="1_hlpdx"]
+[ext_resource type="Script" uid="uid://n2e6txbg1ju3" path="res://mouth.gd" id="2_b1scc"]
+[ext_resource type="AudioStream" uid="uid://pxeywobipi2k" path="res://Assets/Audio/Munch.mp3" id="3_0d2yk"]
+[ext_resource type="PackedScene" uid="uid://cy03d57iyrci" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_physics_hand.tscn" id="4_e186f"]
+[ext_resource type="Script" uid="uid://b8p6yt7yj0cro" path="res://addons/godot-xr-tools/functions/function_pickup.gd" id="5_akxoc"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="6_st23t"]
+[ext_resource type="PackedScene" uid="uid://kcqomcjq52np" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_physics_hand.tscn" id="7_urus1"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="8_u8448"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="9_d1egr"]
+[ext_resource type="PackedScene" uid="uid://bqumugyvkct4r" path="res://addons/godot-xr-tools/staging/loading_screen.tscn" id="10_0d2yk"]
+[ext_resource type="Texture2D" uid="uid://d6rx7koyro11" path="res://Assets/Images/Logo.png" id="11_e186f"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6e1tq"]
+radius = 0.18694
+
+[node name="SplashScreen" type="Node3D"]
+
+[node name="XRToolsStartXR" type="Node" parent="."]
+script = ExtResource("1_hlpdx")
+metadata/_custom_type_script = "uid://bp5ix0qc0l30h"
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+unique_name_in_owner = true
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+
+[node name="HotDogArea" type="Area3D" parent="XROrigin3D/XRCamera3D"]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("2_b1scc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/XRCamera3D/HotDogArea"]
+shape = SubResource("SphereShape3D_6e1tq")
+
+[node name="MunchSound" type="AudioStreamPlayer3D" parent="XROrigin3D/XRCamera3D"]
+unique_name_in_owner = true
+stream = ExtResource("3_0d2yk")
+
+[node name="LeftHandController" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="LeftPhysicsHand" parent="XROrigin3D/LeftHandController" instance=ExtResource("4_e186f")]
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/LeftHandController"]
+script = ExtResource("5_akxoc")
+ranged_distance = 10.0
+metadata/_custom_type_script = "uid://b8p6yt7yj0cro"
+
+[node name="MovementDirect" parent="XROrigin3D/LeftHandController" instance=ExtResource("6_st23t")]
+strafe = true
+
+[node name="RightHandController" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="RightPhysicsHand" parent="XROrigin3D/RightHandController" instance=ExtResource("7_urus1")]
+
+[node name="MovementTurn" parent="XROrigin3D/RightHandController" instance=ExtResource("8_u8448")]
+turn_mode = 2
+
+[node name="XRToolsFunctionPickup" type="Node3D" parent="XROrigin3D/RightHandController"]
+script = ExtResource("5_akxoc")
+ranged_distance = 10.0
+metadata/_custom_type_script = "uid://b8p6yt7yj0cro"
+
+[node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("9_d1egr")]
+collision_mask = 1
+
+[node name="LoadingScreen" parent="." instance=ExtResource("10_0d2yk")]
+splash_screen = ExtResource("11_e186f")
+
+[connection signal="body_entered" from="XROrigin3D/XRCamera3D/HotDogArea" to="XROrigin3D/XRCamera3D/HotDogArea" method="_on_body_entered"]
