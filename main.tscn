@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cohbke6ncegqs" path="res://Scripts/Game_Logic.gd" id="1_5vw27"]
 [ext_resource type="Script" uid="uid://bp5ix0qc0l30h" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://n2jo6br62m48" path="res://boring_sky_shader.tscn" id="2_0cp0l"]
 [ext_resource type="Script" uid="uid://n2e6txbg1ju3" path="res://mouth.gd" id="3_h8e4i"]
 [ext_resource type="PackedScene" uid="uid://cd65vnfm84udm" path="res://milk_bottle.tscn" id="4_1bvp3"]
 [ext_resource type="AudioStream" uid="uid://pxeywobipi2k" path="res://Assets/Audio/Munch.mp3" id="4_4lmeg"]
@@ -30,7 +31,6 @@
 [ext_resource type="AudioStream" uid="uid://d3ldr1m4ibhpl" path="res://Assets/Audio/StartBell.mp3" id="17_yaehf"]
 [ext_resource type="AudioStream" uid="uid://ckraq64v7h5pa" path="res://Assets/Audio/Hotdog.mp3" id="18_074og"]
 [ext_resource type="PackedScene" uid="uid://bm0nasgiei0e0" path="res://dart.tscn" id="19_0cp0l"]
-[ext_resource type="PackedScene" uid="uid://dd8t0rgu5btbs" path="res://fancy_sky_shader.tscn" id="21_ryguw"]
 [ext_resource type="Script" uid="uid://80ox4eevypof" path="res://plinko_game.gd" id="22_d13ii"]
 [ext_resource type="PackedScene" uid="uid://bx5msjbspyrd8" path="res://Assets/Floor/roof-flat-center.fbx" id="23_1u8w0"]
 [ext_resource type="PackedScene" uid="uid://46qkydeyxmn0" path="res://Assets/Pirate-Assets/ship-ocean-liner.fbx" id="23_d13ii"]
@@ -263,6 +263,8 @@ buffer = PackedFloat32Array(0, 0, -1.001, -0.335709, 0, 1.001, 0, 0, 1.001, 0, 0
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_5vw27")
+
+[node name="BoringSkyShader" parent="." instance=ExtResource("2_0cp0l")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -1073,8 +1075,6 @@ draw_pass_1 = SubResource("RibbonTrailMesh_sf15k")
 unique_name_in_owner = true
 stream = ExtResource("8_4c57u")
 volume_db = 14.187
-
-[node name="FancySkyShader" parent="." instance=ExtResource("21_ryguw")]
 
 [node name="PlinkoGame" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.28593, 0.0128665, -15.5504)

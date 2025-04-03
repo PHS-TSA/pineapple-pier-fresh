@@ -40,6 +40,10 @@ import/blender/enabled=false
 
 common/physics_interpolation=true
 
+[rendering]
+
+renderer/rendering_method="mobile"
+
 [xr]
 
 openxr/enabled=true
