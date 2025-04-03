@@ -1532,7 +1532,7 @@ multimesh = SubResource("MultiMesh_4lmeg")
 [node name="Music" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("33_jq2sk")
 attenuation_model = 3
-volume_db = -80.0
+volume_db = -10.0
 autoplay = true
 panning_strength = 0.0
 
