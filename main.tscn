@@ -1,8 +1,9 @@
-[gd_scene load_steps=83 format=4 uid="uid://dkqfmagjsdm07"]
+[gd_scene load_steps=84 format=4 uid="uid://dkqfmagjsdm07"]
 
 [ext_resource type="Script" uid="uid://cohbke6ncegqs" path="res://Scripts/Game_Logic.gd" id="1_5vw27"]
 [ext_resource type="Script" uid="uid://bp5ix0qc0l30h" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://n2jo6br62m48" path="res://boring_sky_shader.tscn" id="2_0cp0l"]
+[ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_d2t1y"]
 [ext_resource type="Script" uid="uid://n2e6txbg1ju3" path="res://mouth.gd" id="3_h8e4i"]
 [ext_resource type="PackedScene" uid="uid://cd65vnfm84udm" path="res://milk_bottle.tscn" id="4_1bvp3"]
 [ext_resource type="AudioStream" uid="uid://pxeywobipi2k" path="res://Assets/Audio/Munch.mp3" id="4_4lmeg"]
@@ -263,6 +264,8 @@ buffer = PackedFloat32Array(0, 0, -1.001, -0.335709, 0, 1.001, 0, 0, 1.001, 0, 0
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_5vw27")
+
+[node name="StartXR" parent="." instance=ExtResource("2_d2t1y")]
 
 [node name="BoringSkyShader" parent="." instance=ExtResource("2_0cp0l")]
 
